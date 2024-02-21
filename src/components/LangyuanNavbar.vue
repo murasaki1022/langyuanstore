@@ -1,9 +1,9 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img height="30" src="" alt="" />
-        </a>
+        <router-link class="navbar-brand" to="/">
+          <img height="80" src="../assets/langyuannavbar.svg" alt="" />
+        </router-link>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -28,6 +28,8 @@
 </template>
 
 <script>
+import * as bootstrap from 'bootstrap'
+window.bootstrap = bootstrap
 export default {
 }
 </script>

@@ -1,8 +1,7 @@
-// import './assets/main.css'
-
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import 'bootstrap/scss/bootstrap.scss'
+
 // 引入 VeeValidate 元件跟功能
 import {
   Field, Form, ErrorMessage, defineRule, configure

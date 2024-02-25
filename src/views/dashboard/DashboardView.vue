@@ -1,8 +1,11 @@
 <template>
-    <div>
-        <DashboardNavbar></DashboardNavbar>
-        <router-view style="padding-left: 250px;"></router-view>
-        <div class="layout-sidebar"></div>
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-auto col-sm-3 g-0"><DashboardNavbar></DashboardNavbar></div>
+          <div class="col-auto col-sm-8">
+            <router-view></router-view>
+          </div>
+      </div>
     </div>
 </template>
 

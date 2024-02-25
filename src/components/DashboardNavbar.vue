@@ -17,12 +17,29 @@
             </li>
     </ul>
     <hr>
-    <div class="col-3"><button type="button" class="btn btn-outline-light btn-sm">登出</button></div>
+    <div class="col-3"><button type="button" class="btn btn-outline-light btn-sm" @click.prevent="signOut">登出</button></div>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+const { VITE_APP_API_URL } = import.meta.env
 export default {
+  methods: {
+    signOut () {
+      const apiUrl = `${VITE_APP_API_URL}/v2/logout`
+      axios
+        .post(apiUrl)
+        .then((response) => {
+          alert(response.data.message)
+          document.cookie = 'hexToken=; expires=; path=/'
+          this.$router.push('/')
+        })
+        .catch((error) => {
+          alert(error.response.data.message)
+        })
+    }
+  }
 }
 </script>
 

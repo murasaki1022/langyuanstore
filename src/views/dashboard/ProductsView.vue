@@ -1,5 +1,4 @@
 <template>
-      <div class="container">
         <div class="text-end">
           <button class="btn btn-primary mt-4" @click="openModal('new')">
             建立新的產品
@@ -48,18 +47,17 @@
           </tbody>
         </table>
         <!-- 分頁元件 -->
-        <!-- <PaginationComponent
+        <PaginationComponent
           :pages="pages"
           :get-product-list="getProductList"
-        ></PaginationComponent> -->
-      </div>
+        ></PaginationComponent>
       <!-- Modal -->
-      <!-- <ProductsModal
+      <ProductsModal
         :update-product="updateProduct"
         :temp-product="tempProduct"
         :isNew="isNew"
         ref="pModal"
-      ></ProductsModal> -->
+      ></ProductsModal>
       <!-- deleteModal -->
       <DeleteProductModal
         :temp-product="tempProduct"
@@ -71,6 +69,8 @@
 <script>
 import axios from 'axios'
 import DeleteProductModal from '../../components/DeleteProductModal.vue'
+import PaginationComponent from '../../components/PaginationComponent.vue'
+import ProductsModal from '../../components/ProductsModal.vue'
 const { VITE_APP_API_URL, VITE_APP_API_NAME } = import.meta.env
 
 export default {
@@ -154,7 +154,7 @@ export default {
         })
     }
   },
-  components: { DeleteProductModal },
+  components: { DeleteProductModal, PaginationComponent, ProductsModal },
   mounted () {
     this.getProductList()
   }

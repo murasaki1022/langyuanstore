@@ -28,18 +28,33 @@ aria-hidden="true"
               <label for="imageUrl" class="form-label">主要圖片</label>
               <input
                 id="imageUrl"
-                v-model="tempProduct.imageUrl"
+                v-model="editProduct.imageUrl"
                 type="text"
                 class="form-control mb-2"
                 placeholder="請輸入圖片連結"
               />
-              <img class="img-fluid" :src="tempProduct.imageUrl" />
+              <img class="img-fluid" :src="editProduct.imageUrl" />
             </div>
+            <h3>上傳圖片</h3>
+            <form action="/api/thisismycourse2/admin/upload"
+                    enctype="multipart/form-data"
+                    method="post">
+              <div class="input-group mb-3">
+              <input class="form-control form-control-sm" id="formFileSm" type="file" aria-describedby="button-addon2">
+              <button class="btn btn-outline-primary btn-sm" type="button" id="button-addon2" @click="uploadFile">上傳</button>
+              </div>
+              <div class="input-group mb-3">
+                        <input class="form-control form-control-sm" type="text" id="newImage" v-model="newImageUrl" />
+                        <button class="btn btn-outline-primary btn-sm" type="button" id="btn" @click="copyUrl">
+                          複製URL
+                        </button>
+              </div>
+            </form>
             <h3 class="mb-3">多圖新增</h3>
-            <div v-if="Array.isArray(tempProduct.imagesUrl)">
+            <div v-if="Array.isArray(editProduct.imagesUrl)">
               <div
                 class="mb-1"
-                v-for="(image, key) in tempProduct.imagesUrl"
+                v-for="(image, key) in editProduct.imagesUrl"
                 :key="key+456"
               >
                 <div class="mb-3">
@@ -48,7 +63,7 @@ aria-hidden="true"
                   >
                   <input
                     :id="image[key]"
-                    v-model="tempProduct.imagesUrl[key]"
+                    v-model="editProduct.imagesUrl[key]"
                     type="text"
                     class="form-control"
                     placeholder="請輸入圖片連結"
@@ -57,11 +72,11 @@ aria-hidden="true"
                 <img class="img-fluid" :src="image" />
               </div>
               <div
-                v-if="!tempProduct.imagesUrl.length || tempProduct.imagesUrl[tempProduct.imagesUrl.length - 1]"
+                v-if="!editProduct.imagesUrl.length || editProduct.imagesUrl[editProduct.imagesUrl.length - 1]"
               >
                 <button
                   class="btn btn-outline-primary btn-sm d-block w-100"
-                  @click="tempProduct.imagesUrl.push('')"
+                  @click="editProduct.imagesUrl.push('')"
                 >
                   新增圖片
                 </button>
@@ -69,7 +84,7 @@ aria-hidden="true"
               <div v-else>
                 <button
                   class="btn btn-outline-danger btn-sm d-block w-100"
-                  @click="tempProduct.imagesUrl.pop()"
+                  @click="editProduct.imagesUrl.pop()"
                 >
                   刪除圖片
                 </button>
@@ -81,7 +96,7 @@ aria-hidden="true"
               <label for="title" class="form-label">標題</label>
               <input
                 id="title"
-                v-model="tempProduct.title"
+                v-model="editProduct.title"
                 type="text"
                 class="form-control"
                 placeholder="請輸入標題"
@@ -93,7 +108,7 @@ aria-hidden="true"
                 <label for="category" class="form-label">分類</label>
                 <input
                   id="category"
-                  v-model="tempProduct.category"
+                  v-model="editProduct.category"
                   type="text"
                   class="form-control"
                   placeholder="請輸入分類"
@@ -103,7 +118,7 @@ aria-hidden="true"
                 <label for="unit" class="form-label">單位</label>
                 <input
                   id="unit"
-                  v-model="tempProduct.unit"
+                  v-model="editProduct.unit"
                   type="text"
                   class="form-control"
                   placeholder="請輸入單位"
@@ -116,7 +131,7 @@ aria-hidden="true"
                 <label for="origin_price" class="form-label">原價</label>
                 <input
                   id="origin_price"
-                  v-model.number="tempProduct.origin_price"
+                  v-model.number="editProduct.origin_price"
                   type="number"
                   min="0"
                   class="form-control"
@@ -127,7 +142,7 @@ aria-hidden="true"
                 <label for="price" class="form-label">售價</label>
                 <input
                   id="price"
-                  v-model.number="tempProduct.price"
+                  v-model.number="editProduct.price"
                   type="number"
                   min="0"
                   class="form-control"
@@ -141,7 +156,7 @@ aria-hidden="true"
               <label for="description" class="form-label">產品描述</label>
               <textarea
                 id="description"
-                v-model="tempProduct.description"
+                v-model="editProduct.description"
                 type="text"
                 class="form-control"
                 placeholder="請輸入產品描述"
@@ -152,7 +167,7 @@ aria-hidden="true"
               <label for="content" class="form-label">說明內容</label>
               <textarea
                 id="content"
-                v-model="tempProduct.content"
+                v-model="editProduct.content"
                 type="text"
                 class="form-control"
                 placeholder="請輸入說明內容"
@@ -163,7 +178,7 @@ aria-hidden="true"
               <div class="form-check">
                 <input
                   id="is_enabled"
-                  v-model="tempProduct.is_enabled"
+                  v-model="editProduct.is_enabled"
                   class="form-check-input"
                   type="checkbox"
                   :true-value="1"
@@ -200,10 +215,15 @@ aria-hidden="true"
 
 <script>
 import { Modal } from 'bootstrap'
+import axios from 'axios'
+const { VITE_APP_API_URL, VITE_APP_API_NAME } = import.meta.env
+
 export default {
   data () {
     return {
-      productModal: null
+      productModal: null,
+      editProduct: {},
+      newImageUrl: []
     }
   },
   props: ['tempProduct', 'updateProduct', 'isNew'],
@@ -213,6 +233,41 @@ export default {
     },
     hideModal () {
       this.productModal.hide()
+    },
+    uploadFile () {
+      const url = `${VITE_APP_API_URL}/api/${VITE_APP_API_NAME}/admin/upload`
+      const fileInput = document.querySelector('#formFileSm')
+      const file = fileInput.files[0]
+      const formData = new FormData()
+
+      formData.append('file-to-upload', file)
+
+      axios
+        .post(url, formData)
+        .then((response) => {
+          this.newImageUrl = response.data.imageUrl
+          fileInput.value = null
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    },
+    copyUrl () {
+      const inputElement = document.querySelector('#newImage')
+
+      // 將文字複製到剪貼簿
+      navigator.clipboard.writeText(inputElement.value)
+        .then(() => {
+          this.newImageUrl = ''
+        })
+        .catch(err => {
+          console.error('複製失敗', err)
+        })
+    }
+  },
+  watch: {
+    tempProduct () {
+      this.editProduct = this.tempProduct
     }
   },
   mounted () {
@@ -224,6 +279,7 @@ export default {
         backdrop: 'static'
       }
     )
+    this.editProduct = this.tempProduct
   }
 }
 </script>

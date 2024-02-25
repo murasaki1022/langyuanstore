@@ -8,7 +8,6 @@
     >
       <a
         class="page-link"
-        href="#"
         aria-label="Previous"
         @click="getProductList(pages.current_page - 1)"
       >
@@ -22,7 +21,7 @@
       v-for="page in pages.total_pages"
       :key="page +123 "
     >
-      <a class="page-link" href="#" @click="getProductList(page)"
+      <a class="page-link"  @click="getProductList(page)"
         >{{page}}</a
       >
     </li>
@@ -34,7 +33,6 @@
     >
       <a
         class="page-link"
-        href="#"
         aria-label="Next"
         @click="getProductList(pages.current_page +1)"
       >

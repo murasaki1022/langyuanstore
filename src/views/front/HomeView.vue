@@ -1,14 +1,26 @@
 <template>
-<h1>這是首頁</h1>
 <div class="container">
-    <!--<swiper :pagination="true" :modules="modules" class="mySwiper">
-    <swiper-slide>Slide 1</swiper-slide>
-    <swiper-slide>Slide 2</swiper-slide><swiper-slide>Slide 3</swiper-slide>
-    <swiper-slide>Slide 4</swiper-slide><swiper-slide>Slide 5</swiper-slide>
-    <swiper-slide>Slide 6</swiper-slide><swiper-slide>Slide 7</swiper-slide>
-    <swiper-slide>Slide 8</swiper-slide><swiper-slide>Slide 9</swiper-slide>
-  </swiper>-->
-  <p class="d-flex justify-content-center fs-2 fw-bold mb-3">熱銷商品</p>
+  <div class="d-flex justify-content-center mt-5">
+    <swiper :pagination="true" :modules="modules" class="mySwiper">
+    <swiper-slide><img style="width: 50rem" src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?q=80&w=1886&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""/></swiper-slide>
+    <swiper-slide><img style="width: 50rem" src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""/></swiper-slide>
+    <swiper-slide><img style="width: 50rem" src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""/></swiper-slide>
+    <swiper-slide><img style="width: 50rem" src="https://images.unsplash.com/photo-1601758177266-bc599de87707?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""/></swiper-slide>
+    <swiper-slide><img style="width: 50rem" src="https://images.unsplash.com/photo-1573435567032-ff5982925350?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""/></swiper-slide>
+  </swiper>
+  </div>
+  <div class="d-flex justify-content-center mb-5 mt-5">
+    <img class="rounded w-100 h-auto" style="height: 25rem" src="https://cdn-v4.petpetgo.com/1500/public/a0318a6f-6f72-4da1-83f3-f590989836f6.jpg" alt="" />
+  </div>
+  <div class="row">
+    <div class="col">
+        <img class="w-100 h-auto rounded" src="https://images.unsplash.com/photo-1597843786411-a7fa8ad44a95?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+    </div>
+    <div class="col">
+        <img class="w-100 h-auto rounded" src="https://images.unsplash.com/photo-1597843786411-a7fa8ad44a95?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+    </div>
+  </div>
+  <p class="d-flex justify-content-center fs-2 fw-bold mb-3 mt-5">熱銷商品</p>
 <div class="d-flex justify-content-center">
     <div class="row row-cols-md-4 row-cols-sm-2 g-3">
     <div class="col">
@@ -122,20 +134,33 @@
 </div>
 </div>
 <div class="d-flex justify-content-center mt-1">
-    <h5>本專題僅為學習用途・不做任何商業使用・圖片來源請見GitHub Repo</h5>
+    <h5 class="fs-6">本專題僅為學習用途・不做任何商業使用・圖片來源請見GitHub Repo</h5>
 </div>
 
 </template>
 
 <script>
-// import function to register Swiper custom elements
-import { register } from 'swiper/element/bundle'
-// register Swiper custom elements
-register()
+import { Swiper, SwiperSlide } from 'swiper/vue'
+
+// Import Swiper styles
+import 'swiper/css'
+
+import 'swiper/css/pagination'
+
+// import required modules
+import { Pagination } from 'swiper/modules'
+
 export default {
-
+  components: {
+    Swiper,
+    SwiperSlide
+  },
+  setup () {
+    return {
+      modules: [Pagination]
+    }
+  }
 }
-
 </script>
 
 <style scoped>

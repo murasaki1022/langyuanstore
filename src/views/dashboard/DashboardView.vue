@@ -2,6 +2,7 @@
     <div>
         <DashboardNavbar></DashboardNavbar>
         <router-view style="padding-left: 250px;"></router-view>
+        <div class="layout-sidebar"></div>
     </div>
 </template>
 

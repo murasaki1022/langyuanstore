@@ -298,8 +298,10 @@ $cyans: (
 // fusv-enable
 
 // scss-docs-start theme-color-variables
-$primary:       $blue !default;
+$primary:       #E4A52A; //$blue !default;
 $secondary:     $gray-600 !default;
+$secondary2:    #6C584C;
+$secondary3:    #F0E8E0; //$gray-600 !default;
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
@@ -312,6 +314,8 @@ $dark:          $gray-900 !default;
 $theme-colors: (
   "primary":    $primary,
   "secondary":  $secondary,
+  "secondary2": $secondary2,
+  "secondary3": $secondary3,
   "success":    $success,
   "info":       $info,
   "warning":    $warning,
@@ -539,7 +543,7 @@ $border-widths: (
   5: 5px
 ) !default;
 $border-style:                solid !default;
-$border-color:                $gray-300 !default;
+$border-color:                $secondary2 !default;
 $border-color-translucent:    rgba($black, .175) !default;
 // scss-docs-end border-variables
 

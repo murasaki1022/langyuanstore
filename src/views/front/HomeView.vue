@@ -1,7 +1,7 @@
 <template>
 <div class="container">
   <div class="d-flex justify-content-center mt-5">
-    <swiper :pagination="true" :modules="modules" class="mySwiper">
+    <swiper :pagination="true" :navigation="true" :modules="modules" class="mySwiper">
     <swiper-slide><img style="width: 50rem" src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?q=80&w=1886&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""/></swiper-slide>
     <swiper-slide><img style="width: 50rem" src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""/></swiper-slide>
     <swiper-slide><img style="width: 50rem" src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""/></swiper-slide>
@@ -146,9 +146,10 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
 
 import 'swiper/css/pagination'
+import 'swiper/css/navigation'
 
 // import required modules
-import { Pagination } from 'swiper/modules'
+import { Pagination, Navigation } from 'swiper/modules'
 
 export default {
   components: {
@@ -157,7 +158,7 @@ export default {
   },
   setup () {
     return {
-      modules: [Pagination]
+      modules: [Pagination, Navigation]
     }
   }
 }

@@ -204,14 +204,6 @@
         <div class="row">
           <div class="col">
             <ul class="fs-5">
-              關於浪元
-              <li class="fs-6">
-                <router-link class="text-dark" to="">品牌故事</router-link>
-              </li>
-            </ul>
-          </div>
-          <div class="col">
-            <ul class="fs-5">
               浪圓集團
               <li class="fs-6">
                 <router-link class="text-dark" to="">浪元小賣店</router-link>
@@ -226,18 +218,6 @@
               常見問題
               <li class="fs-6">
                 <router-link class="text-dark" to="">FAQ</router-link>
-              </li>
-              <li class="fs-6">
-                <router-link class="text-dark" to="">付款說明</router-link>
-              </li>
-              <li class="fs-6">
-                <router-link class="text-dark" to="">運送說明</router-link>
-              </li>
-              <li class="fs-6">
-                <router-link class="text-dark" to="">退換貨說明</router-link>
-              </li>
-              <li class="fs-6">
-                <router-link class="text-dark" to="">意見回饋</router-link>
               </li>
             </ul>
           </div>

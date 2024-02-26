@@ -203,27 +203,18 @@
       <div class="fw-bold">
         <div class="row">
           <div class="col">
-            <ul class="fs-5">
-              浪圓集團
-              <li class="fs-6">
-                <router-link class="text-dark" to="">浪元小賣店</router-link>
-              </li>
-              <li class="fs-6">
-                <router-link class="text-dark" to="">浪圓</router-link>
-              </li>
+            <ul class="fs-5">浪圓集團
+              <li class="fs-6">浪元小賣店</li>
+              <li class="fs-6">浪圓</li>
             </ul>
           </div>
           <div class="col">
-            <ul class="fs-5">
-              常見問題
-              <li class="fs-6">
-                <router-link class="text-dark" to="">FAQ</router-link>
-              </li>
+            <ul class="fs-5">常見問題
+              <li class="fs-6">FAQ</li>
             </ul>
           </div>
           <div class="col">
-            <ul class="fs-5">
-              聯絡我們
+            <ul class="fs-5">聯絡我們
               <li class="fs-6">營業時間：<br />周一至周五 09:30 - 18:00</li>
               <li class="fs-6">客服電話：<br />02-1234-6789</li>
               <li class="fs-6">E-mail：<br />service@gmail.com</li>

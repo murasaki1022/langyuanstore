@@ -36,7 +36,7 @@
         <button
           type="button"
           class="btn btn-danger"
-          @click="deleteOrder"
+          @click="$emit('delete-order')"
         >
           確認刪除
         </button>
@@ -62,7 +62,8 @@ export default {
       this.delOrderModal.hide()
     }
   },
-  props: ['tempOrder', 'deleteOrder'],
+  emits: ['delete-order'],
+  props: ['tempOrder'],
   mounted () {
     this.delOrderModal = new Modal(this.$refs.delOrderModal, {
       keyboard: false,

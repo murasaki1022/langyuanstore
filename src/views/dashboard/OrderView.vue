@@ -43,6 +43,7 @@
               <button
                 class="btn btn-outline-primary btn-sm"
                 type="button"
+                @click="openOrderModal(item)"
               >
                 檢視
               </button>
@@ -59,15 +60,21 @@
       </template>
     </tbody>
   </table>
+  <!-- <OrderModal
+        :update-order="updateOrder"
+        :temp-order="tempOrder"
+        ref="orderModal"
+      ></OrderModal> -->
   <DeleteOrderModal
         :temp-order="tempOrder"
-        :delete-order="deleteOrder"
+        @delete-order="deleteOrder"
         ref="removeModal"></DeleteOrderModal>
 </template>
 
 <script>
 import axios from 'axios'
 import DeleteOrderModal from '../../components/DeleteOrderModal.vue'
+// import OrderModal from '../../components/OrderModal.vue'
 const { VITE_APP_API_URL, VITE_APP_API_NAME } = import.meta.env
 
 export default {
@@ -75,7 +82,6 @@ export default {
     return {
       orders: [],
       tempOrder: {},
-      isNew: false,
       pages: {}
     }
   },
@@ -89,34 +95,34 @@ export default {
           this.pages = response.data.pagination
         })
         .catch((error) => {
-          console.log(error)
+          console.log(error.response.data.message)
         })
+    },
+    openOrderModal (item) {
+      this.tempOrder = { ...item }
+      this.$refs.orderModal.openModal()
     },
     openDelOrderModal (item) {
       this.tempOrder = { ...item }
       this.$refs.removeModal.openModal()
     }
   },
-  // updateOrder () {
-  //   let url = `${VITE_APP_API_URL}/v2/api/${VITE_APP_API_NAME}/admin/order/${this.tempProduct.id}`
-  //   let http = 'put'
+  updateOrder (item) {
+    const url = `${VITE_APP_API_URL}/v2/api/${VITE_APP_API_NAME}/admin/order/${item.id}`
+    const paid = {
+      is_paid: item.is_paid
+    }
 
-  //   if (this.isNew) {
-  //     url = `${VITE_APP_API_URL}/v2/api/${VITE_APP_API_NAME}/admin/order`
-  //     http = 'post'
-  //   }
-
-  //   axios[http](url, { data: this.tempProduct })
-  //     .then((response) => {
-  //       alert(response.data.message)
-  //       // productModal.hide();
-  //       this.$refs.pModal.hideModal()
-  //       this.getProductList()
-  //     })
-  //     .catch((error) => {
-  //       alert(error.data.message)
-  //     })
-  // },
+    axios.put(url, { data: paid })
+      .then((response) => {
+        alert(response.data.message)
+        this.$refs.orderModal.hideModal()
+        this.ge()
+      })
+      .catch((error) => {
+        alert(error.data.message)
+      })
+  },
   deleteOrder () {
     const url = `${VITE_APP_API_URL}/v2/api/${VITE_APP_API_NAME}/admin/order/${this.tempOrder.id}`
 

@@ -1,9 +1,4 @@
 <template>
-<<<<<<< HEAD
-    <div>
-        <DashboardNavbar></DashboardNavbar>
-        <router-view style="padding-left: 250px;"></router-view>
-=======
     <div class="container-fluid">
       <div class="row">
           <div class="col-auto col-sm-3 g-0"><DashboardNavbar></DashboardNavbar></div>
@@ -11,7 +6,6 @@
             <router-view></router-view>
           </div>
       </div>
->>>>>>> df26f2ce5cba0a6d3249145aa431e40c5a9c93a7
     </div>
 </template>
 

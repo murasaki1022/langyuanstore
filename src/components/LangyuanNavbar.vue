@@ -14,9 +14,6 @@
               <router-link class="nav-link fw-bold" to="/">回到首頁</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link fw-bold" to="/about">關於浪元</router-link>
-            </li>
-            <li class="nav-item">
               <router-link class="nav-link fw-bold" to="/products">商品專區</router-link>
             </li>
             <li class="nav-item">

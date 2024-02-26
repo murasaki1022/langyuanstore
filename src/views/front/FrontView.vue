@@ -1,6 +1,7 @@
 <template>
     <LangyuanNavbar></LangyuanNavbar>
     <router-view></router-view>
+    <LangyuanFooter></LangyuanFooter>
 </template>
 
 <script>

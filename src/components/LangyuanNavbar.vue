@@ -11,13 +11,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <router-link class="nav-link fw-bold" to="/">回到首頁</router-link>
+              <router-link class="nav-link fw-bold text-change" to="/">回到首頁</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link fw-bold" to="/products">商品專區</router-link>
+              <router-link class="nav-link fw-bold text-change" to="/products">商品專區</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link fw-bold" to="">常見問題</router-link>
+              <router-link class="nav-link fw-bold text-change" to="/">常見問題</router-link>
             </li>
           </ul>
         </div>

@@ -81,67 +81,18 @@
     <p class="d-flex justify-content-center fs-2 fw-bold mb-3 mt-5">熱銷商品</p>
     <div class="d-flex justify-content-center">
       <div class="row row-cols-md-4 row-cols-sm-2 g-3">
-        <div class="col">
+        <div class="col-xs-2 col-sm col-md-4 col-lg" v-for="product in products" :key="product.id">
           <div class="card" style="width: 14rem">
-            <img
-              src="https://images.unsplash.com/photo-1605533914438-af2b1018b1b7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNhdCUyMGZvb2R8ZW58MHx8MHx8fDA%3D"
-              class="card-img-top"
-              alt=""
-            />
+            <div
+            style="height: 200px; background-size: cover; background-position: center;"
+            :style="{backgroundImage:`url(${product.imageUrl})`}"
+            class="card-img-top"
+            alt=""></div>
             <div class="card-body">
-              <h5 class="card-title">益生菌消臭豆腐砂 原味(米粒型) 7L</h5>
-              <p class="card-text">NT$199</p>
-              <a href="#" class="btn btn-primary d-flex justify-content-center"
-                >立即購買</a
-              >
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card" style="width: 14rem">
-            <img
-              src="https://images.unsplash.com/photo-1605533914438-af2b1018b1b7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNhdCUyMGZvb2R8ZW58MHx8MHx8fDA%3D"
-              class="card-img-top"
-              alt=""
-            />
-            <div class="card-body">
-              <h5 class="card-title">益生菌消臭豆腐砂 原味(米粒型) 7L</h5>
-              <p class="card-text">NT$199</p>
-              <a href="#" class="btn btn-primary d-flex justify-content-center"
-                >立即購買</a
-              >
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card" style="width: 14rem">
-            <img
-              src="https://images.unsplash.com/photo-1605533914438-af2b1018b1b7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNhdCUyMGZvb2R8ZW58MHx8MHx8fDA%3D"
-              class="card-img-top"
-              alt=""
-            />
-            <div class="card-body">
-              <h5 class="card-title">益生菌消臭豆腐砂 原味(米粒型) 7L</h5>
-              <p class="card-text">NT$199</p>
-              <a href="#" class="btn btn-primary d-flex justify-content-center"
-                >立即購買</a
-              >
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card" style="width: 14rem">
-            <img
-              src="https://images.unsplash.com/photo-1605533914438-af2b1018b1b7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNhdCUyMGZvb2R8ZW58MHx8MHx8fDA%3D"
-              class="card-img-top"
-              alt=""
-            />
-            <div class="card-body">
-              <h5 class="card-title">益生菌消臭豆腐砂 原味(米粒型) 7L</h5>
-              <p class="card-text">NT$199</p>
-              <a href="#" class="btn btn-primary d-flex justify-content-center"
-                >立即購買</a
-              >
+              <h5 class="card-title">{{ product.title }}</h5>
+              <p class="card-text">NT$ {{ product.price }}</p>
+              <a type="button" class="btn btn-primary d-flex justify-content-center"
+                >立即購買</a>
             </div>
           </div>
         </div>
@@ -251,7 +202,78 @@ import 'swiper/css/navigation'
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules'
 
+import axios from 'axios'
+import Swal from 'sweetalert2'
+import 'vue-loading-overlay/dist/css/index.css'
+const { VITE_APP_API_URL, VITE_APP_API_NAME } = import.meta.env
+
 export default {
+  data () {
+    return {
+      isLoading: true,
+      products: [],
+      tempProduct: {},
+      carts: {},
+      status: {
+        addCartLoading: '',
+        changeCartNumLoading: ''
+      }
+    }
+  },
+  methods: {
+    getProduct () {
+      axios
+        .get(`${VITE_APP_API_URL}/v2/api/${VITE_APP_API_NAME}/products/all`)
+        .then((res) => {
+          this.products = res.data.products
+          console.log(res.data.products)
+          this.isLoading = false
+        })
+        .catch((err) => {
+          console.log(err.data.message)
+        })
+    },
+    openModal (product) {
+      this.tempProduct = product
+      this.$refs.userModal.open()
+    },
+    // eslint-disable-next-line camelcase
+    addCart (product_id, qty = 1) {
+      const order = {
+        // eslint-disable-next-line camelcase
+        product_id,
+        qty
+      }
+      // eslint-disable-next-line camelcase
+      this.status.addCartLoading = product_id
+      axios
+        .post(`${VITE_APP_API_URL}/v2/api/${VITE_APP_API_NAME}/cart`, { data: order })
+        .then((res) => {
+          this.status.addCartLoading = ''
+          Swal.fire(res.data.message)
+          this.$refs.userModal.close()
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    },
+    changeCartNum (item, qty = 1) {
+      const order = {
+        product_id: item.product_id,
+        qty
+      }
+      this.status.changeCartNumLoading = item.id
+      axios
+        .put(`${VITE_APP_API_URL}/v2/api/${VITE_APP_API_NAME}/cart/${item.id}`, { data: order })
+        .then((res) => {
+          this.status.changeCartNumLoading = ''
+          this.getCart()
+        })
+        .catch((err) => {
+          console.log(err.response.data.message)
+        })
+    }
+  },
   components: {
     Swiper,
     SwiperSlide
@@ -260,6 +282,9 @@ export default {
     return {
       modules: [Pagination, Navigation]
     }
+  },
+  mounted () {
+    this.getProduct()
   }
 }
 </script>

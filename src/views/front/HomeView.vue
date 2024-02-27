@@ -118,7 +118,7 @@
             <div class="card-body">
               <h5 class="card-title fs-6 fw-bold">{{ product.title }}</h5>
               <p class="card-text">NT$ {{ product.price }}</p>
-              <a type="button" class="btn btn-primary d-flex justify-content-center"
+              <a class="btn btn-primary d-flex justify-content-center"
                 @click.prevent="addCart(product.id)">立即購買</a>
             </div>
           </div>
@@ -127,12 +127,7 @@
       </swiper-slide>
   </swiper>
   </div>
-<!--<div class="gap-2 col-6 mx-auto d-flex justify-content-center mt-5">
-      <div class="btn btn-outline-primary btn-md px-4" type="button">
-        查看更多<br />More
-      </div>
-    </div>-->
-  </div>
+</div>
   <div class="bg-secondary3 pb-5">
     <div class="d-flex justify-content-center fs-2 fw-bold mt-5 pt-5">
       好評推薦
@@ -232,7 +227,8 @@ import 'swiper/css/navigation'
 import { Autoplay, Pagination, Navigation } from 'swiper/modules'
 
 import axios from 'axios'
-import Swal from 'sweetalert2'
+import cartStore from '@/stores/cartStore'
+import { mapActions } from 'pinia'
 import 'vue-loading-overlay/dist/css/index.css'
 const { VITE_APP_API_URL, VITE_APP_API_NAME } = import.meta.env
 
@@ -242,11 +238,7 @@ export default {
       isLoading: true,
       products: [],
       tempProduct: {},
-      carts: {},
-      status: {
-        addCartLoading: '',
-        changeCartNumLoading: ''
-      }
+      carts: {}
     }
   },
   methods: {
@@ -255,7 +247,6 @@ export default {
         .get(`${VITE_APP_API_URL}/v2/api/${VITE_APP_API_NAME}/products/all`)
         .then((res) => {
           this.products = res.data.products
-          console.log(res.data.products)
           this.isLoading = false
         })
         .catch((err) => {
@@ -266,26 +257,7 @@ export default {
       this.tempProduct = product
       this.$refs.userModal.open()
     },
-    // eslint-disable-next-line camelcase
-    addCart (product_id, qty = 1) {
-      const order = {
-        // eslint-disable-next-line camelcase
-        product_id,
-        qty
-      }
-      // eslint-disable-next-line camelcase
-      this.status.addCartLoading = product_id
-      axios
-        .post(`${VITE_APP_API_URL}/v2/api/${VITE_APP_API_NAME}/cart`, { data: order })
-        .then((res) => {
-          this.status.addCartLoading = ''
-          Swal.fire(res.data.message)
-          this.$refs.userModal.close()
-        })
-        .catch((err) => {
-          console.log(err)
-        })
-    },
+    ...mapActions(cartStore, ['addCart']),
     changeCartNum (item, qty = 1) {
       const order = {
         product_id: item.product_id,

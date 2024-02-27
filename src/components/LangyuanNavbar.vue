@@ -23,16 +23,33 @@
         </div>
           <p class="fs-2 bi bi-search text-primary mx-2"></p>
           <p class="fs-2 bi bi-clipboard2-check text-primary mx-2"></p>
-          <router-link to="/cart"><p class="fs-2 bi bi-cart4 mx-2"></p></router-link>
+          <router-link to="/cart" class="position-relative">
+            <p class="fs-2 bi bi-cart4 mx-2"></p>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            {{ this.cart.length }}
+            <span class="visually-hidden">unread messages</span>
+            </span>
+          </router-link>
       </div>
     </nav>
 </template>
 
 <script>
-
+import cartStore from '../stores/cartStore'
+import { mapActions, mapState } from 'pinia'
 import * as bootstrap from 'bootstrap'
 window.bootstrap = bootstrap
+
 export default {
+  computed: {
+    ...mapState(cartStore, ['cart'])
+  },
+  methods: {
+    ...mapActions(cartStore, ['getCart'])
+  },
+  mounted () {
+    this.getCart()
+  }
 }
 </script>
 

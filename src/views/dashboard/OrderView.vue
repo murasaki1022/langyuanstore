@@ -13,7 +13,7 @@
     <tbody>
       <template v-for="item in orders" :key="item.id">
         <tr v-if="orders.length" :class="{ 'text-secondary': !item.is_paid }">
-          <td></td>
+          <td>{{item.create_at}}</td>
           <td><span v-text="item.user.email" v-if="item.user"></span></td>
           <td>
             <ul class="list-unstyled">
@@ -31,6 +31,7 @@
                 type="checkbox"
                 :id="`paidSwitch${item.id}`"
                 v-model="item.is_paid"
+                @change="updateOrder(item)"
               />
               <label class="form-check-label" :for="`paidSwitch${item.id}`">
                 <span v-if="item.is_paid">已付款</span>
@@ -60,21 +61,26 @@
       </template>
     </tbody>
   </table>
-  <!-- <OrderModal
-        :update-order="updateOrder"
+  <PaginationComponent
+          :pages="pages"
+          @change-pages="getOrderList"
+        ></PaginationComponent>
+  <OrderModal
         :temp-order="tempOrder"
+        :update-order="updateOrder"
         ref="orderModal"
-      ></OrderModal> -->
+      ></OrderModal>
   <DeleteOrderModal
         :temp-order="tempOrder"
-        @delete-order="deleteOrder"
+        :delete-order="deleteOrder"
         ref="removeModal"></DeleteOrderModal>
 </template>
 
 <script>
 import axios from 'axios'
 import DeleteOrderModal from '../../components/DeleteOrderModal.vue'
-// import OrderModal from '../../components/OrderModal.vue'
+import OrderModal from '../../components/OrderModal.vue'
+import PaginationComponent from '../../components/PaginationComponent.vue'
 const { VITE_APP_API_URL, VITE_APP_API_NAME } = import.meta.env
 
 export default {
@@ -105,39 +111,40 @@ export default {
     openDelOrderModal (item) {
       this.tempOrder = { ...item }
       this.$refs.removeModal.openModal()
+    },
+    updateOrder (item) {
+      const url = `${VITE_APP_API_URL}/v2/api/${VITE_APP_API_NAME}/admin/order/${item.id}`
+      const paid = {
+        is_paid: item.is_paid
+      }
+
+      axios.put(url, { data: paid })
+        .then((response) => {
+          alert(response.data.message)
+          this.$refs.orderModal.hideModal()
+          this.getOrderList()
+        })
+        .catch((error) => {
+          console.log(error.response.data.message)
+          alert(error.response.data.message)
+        })
+    },
+    deleteOrder () {
+      const url = `${VITE_APP_API_URL}/v2/api/${VITE_APP_API_NAME}/admin/order/${this.tempOrder.id}`
+
+      axios
+        .delete(url)
+        .then((response) => {
+          alert(response.data.message)
+          this.$refs.removeModal.hideModal()
+          this.getOrderList()
+        })
+        .catch((error) => {
+          alert(error.data.message)
+        })
     }
   },
-  updateOrder (item) {
-    const url = `${VITE_APP_API_URL}/v2/api/${VITE_APP_API_NAME}/admin/order/${item.id}`
-    const paid = {
-      is_paid: item.is_paid
-    }
-
-    axios.put(url, { data: paid })
-      .then((response) => {
-        alert(response.data.message)
-        this.$refs.orderModal.hideModal()
-        this.ge()
-      })
-      .catch((error) => {
-        alert(error.data.message)
-      })
-  },
-  deleteOrder () {
-    const url = `${VITE_APP_API_URL}/v2/api/${VITE_APP_API_NAME}/admin/order/${this.tempOrder.id}`
-
-    axios
-      .delete(url)
-      .then((response) => {
-        alert(response.data.message)
-        this.$refs.removeModal.hideModal()
-        this.getOrderList()
-      })
-      .catch((error) => {
-        alert(error.data.message)
-      })
-  },
-  components: { DeleteOrderModal },
+  components: { DeleteOrderModal, OrderModal, PaginationComponent },
   mounted () {
     this.getOrderList()
   }

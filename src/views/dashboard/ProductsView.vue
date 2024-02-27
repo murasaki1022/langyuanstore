@@ -49,7 +49,7 @@
         <!-- 分頁元件 -->
         <PaginationComponent
           :pages="pages"
-          :get-product-list="getProductList"
+          @change-pages="getProductList"
         ></PaginationComponent>
       <!-- Modal -->
       <ProductsModal

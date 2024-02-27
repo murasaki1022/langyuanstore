@@ -1,6 +1,6 @@
 <template>
 <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true" ref="modal">
+    aria-hidden="true" ref="orderModal">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content border-0">
         <div class="modal-header bg-dark text-white">
@@ -104,7 +104,7 @@
           <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
             取消
           </button>
-          <button type="button" class="btn btn-primary" @click="update-order, tempOrder">
+          <button type="button" class="btn btn-primary" @click="updateOrder(editOrder)">
             修改付款狀態
           </button>
         </div>
@@ -119,10 +119,11 @@ export default {
   data () {
     return {
       orderModal: null,
-      editOrder: {}
+      editOrder: {},
+      is_paid: false
     }
   },
-  props: ['tempOrder', 'update-order'],
+  props: ['tempOrder', 'updateOrder'],
   methods: {
     openModal () {
       this.orderModal.show()

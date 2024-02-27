@@ -22,7 +22,7 @@
       </div>
       <div class="modal-body">
         是否刪除
-        <strong class="text-danger">這筆訂單</strong>
+        <strong class="text-danger">訂單{{ tempOrder.id }}</strong>
         (刪除後將無法恢復)。
       </div>
       <div class="modal-footer">
@@ -36,7 +36,7 @@
         <button
           type="button"
           class="btn btn-danger"
-          @click="$emit('delete-order')"
+          @click="deleteOrder"
         >
           確認刪除
         </button>
@@ -62,8 +62,7 @@ export default {
       this.delOrderModal.hide()
     }
   },
-  emits: ['delete-order'],
-  props: ['tempOrder'],
+  props: ['tempOrder', 'deleteOrder'],
   mounted () {
     this.delOrderModal = new Modal(this.$refs.delOrderModal, {
       keyboard: false,

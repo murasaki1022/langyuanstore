@@ -9,7 +9,7 @@
       <a
         class="page-link"
         aria-label="Previous"
-        @click="getProductList(pages.current_page - 1)"
+        @click="updatePage(pages.current_page - 1)"
       >
         <span aria-hidden="true">&laquo;</span>
       </a>
@@ -21,7 +21,7 @@
       v-for="page in pages.total_pages"
       :key="page +123 "
     >
-      <a class="page-link"  @click="getProductList(page)"
+      <a class="page-link"  @click="updatePage(page)"
         >{{page}}</a
       >
     </li>
@@ -34,7 +34,7 @@
       <a
         class="page-link"
         aria-label="Next"
-        @click="getProductList(pages.current_page +1)"
+        @click="updatePage(pages.current_page +1)"
       >
         <span aria-hidden="true">&raquo;</span>
       </a>
@@ -45,6 +45,11 @@
 
 <script>
 export default {
-  props: ['pages', 'getProductList']
+  props: ['pages'],
+  methods: {
+    updatePage (page) {
+      this.$emit('changePages', page)
+    }
+  }
 }
 </script>

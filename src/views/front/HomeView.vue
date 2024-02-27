@@ -2,6 +2,10 @@
   <div class="container">
     <div class="d-flex justify-content-center mt-5">
       <swiper
+        :autoplay="{
+        delay: 2500,
+        disableOnInteraction: false,
+        }"
         :pagination="true"
         :navigation="true"
         :modules="modules"
@@ -80,8 +84,31 @@
     </div>
     <p class="d-flex justify-content-center fs-2 fw-bold mb-3 mt-5">熱銷商品</p>
     <div class="d-flex justify-content-center">
+    <swiper
+    :slidesPerView="1"
+    :spaceBetween="10"
+    :pagination="{
+      clickable: true,
+    }"
+    :breakpoints="{
+      '640': {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      '768': {
+        slidesPerView: 4,
+        spaceBetween: 40,
+      },
+      '1024': {
+        slidesPerView: 5,
+        spaceBetween: 50,
+      },
+    }"
+    :modules="modules"
+    class="mySwiper">
+    <swiper-slide v-for="product in products" :key="product.id">
       <div class="row row-cols-md-4 row-cols-sm-2 g-3">
-        <div class="col-xs-2 col-sm col-md-4 col-lg" v-for="product in products" :key="product.id">
+      <div class="col-xs-2 col-sm col-md-4 col-lg">
           <div class="card" style="width: 14rem">
             <div
             style="height: 200px; background-size: cover; background-position: center;"
@@ -89,20 +116,22 @@
             class="card-img-top"
             alt=""></div>
             <div class="card-body">
-              <h5 class="card-title">{{ product.title }}</h5>
+              <h5 class="card-title fs-6 fw-bold">{{ product.title }}</h5>
               <p class="card-text">NT$ {{ product.price }}</p>
               <a type="button" class="btn btn-primary d-flex justify-content-center"
-                >立即購買</a>
+                @click.prevent="addCart(product.id)">立即購買</a>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="gap-2 col-6 mx-auto d-flex justify-content-center mt-5">
+      </swiper-slide>
+  </swiper>
+  </div>
+<!--<div class="gap-2 col-6 mx-auto d-flex justify-content-center mt-5">
       <div class="btn btn-outline-primary btn-md px-4" type="button">
         查看更多<br />More
       </div>
-    </div>
+    </div>-->
   </div>
   <div class="bg-secondary3 pb-5">
     <div class="d-flex justify-content-center fs-2 fw-bold mt-5 pt-5">
@@ -200,7 +229,7 @@ import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
 // import required modules
-import { Pagination, Navigation } from 'swiper/modules'
+import { Autoplay, Pagination, Navigation } from 'swiper/modules'
 
 import axios from 'axios'
 import Swal from 'sweetalert2'
@@ -280,7 +309,7 @@ export default {
   },
   setup () {
     return {
-      modules: [Pagination, Navigation]
+      modules: [Autoplay, Pagination, Navigation]
     }
   },
   mounted () {

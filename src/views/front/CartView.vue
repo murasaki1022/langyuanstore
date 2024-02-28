@@ -8,37 +8,27 @@
         ></loading>
 <div class="container">
  <div class="mt-4">
+   <div class="container bg-primary"><p class="pt-3 pb-3 px-2 mb-3 fs-5 fw-bold">購物明細</p></div>
                 <!-- 購物車列表 -->
-              <div class="text-end">
-                <button
-                  class="btn btn-outline-danger"
-                  type="button"
-                  @click="deleteCartAll()"
-                >
-                  清空購物車
-                </button>
-              </div>
               <table class="table align-middle">
                 <thead>
                   <tr>
-                    <th></th>
-                    <th>品名</th>
-                    <th style="width: 150px">數量/單位</th>
-                    <th class="text-end">單價</th>
+                    <th style="width: 200px"></th>
+                    <th class="text-center">品名</th>
+                    <th class="text-end" style="width: 150px">數量/單位</th>
+                    <th class="text-end" style="width: 150px">單價</th>
+                    <th class="text-center" style="width: 150px">刪除商品</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr v-for="cart in carts.carts" :key="cart.id">
-                    <td>
-                      <button
-                        type="button"
-                        class="btn btn-outline-danger btn-sm"
-                        @click="deleteCartItem(cart.id)"
-                      >
-                        x
-                      </button>
+                    <td
+                    style="height: 200px;
+                    background-size: cover;
+                    background-position: center;"
+                    :style="{backgroundImage:`url(${cart.product.imageUrl})`}">
                     </td>
-                    <td>{{cart.product.title}}</td>
+                    <td class="text-center">{{cart.product.title}}</td>
                     <td>
                       <div class="input-group input-group-sm">
                         <div class="input-group mb-3">
@@ -50,23 +40,58 @@
                             :disabled="cart.id === status.changeCartNumLoading"
                             @change="changeCartNum(cart,cart.qty)"
                           />
-                          <span class="input-group-text" id="basic-addon2"
+                          <span class="input-group-text bg-secondary3" id="basic-addon2"
                             >{{cart.product.unit}}</span
                           >
                         </div>
                       </div>
                     </td>
-                    <td class="text-end">${{cart.total}}</td>
+                    <td class="text-end">NT${{cart.total}}</td>
+                    <td class="text-center">
+                      <button
+                        type="button"
+                        class="btn text-danger bi bi-trash-fill fs-3"
+                        @click="deleteCartItem(cart.id)"
+                      ></button>
+                    </td>
                   </tr>
                 </tbody>
-                <tfoot>
+           <!--     <tfoot>
                   <tr>
+                    <td></td>
                     <td colspan="3" class="text-end">總計</td>
                     <td class="text-end">${{carts.final_total}}</td>
                   </tr>
-                </tfoot>
+                </tfoot>-->
               </table>
-            <div class="my-5 row justify-content-center">
+  <div class="container bg-primary"><p class="pt-3 pb-3 px-2 mb-3 fs-5 fw-bold">折扣碼輸入</p></div>
+  <div class="row">
+    <div class="col d-flex flex-row-reverse">
+      <div class="input-group mb-3" style="width: 15rem">
+       <input type="text" class="form-control" placeholder="輸入折扣碼" aria-label="Recipient's username" aria-describedby="button-addon2">
+       <button class="btn btn-outline-primary" type="button" id="button-addon2">使用<br>折扣碼</button>
+     </div>
+    </div>
+  </div>
+  <div class="container bg-secondary3 px-5 pt-3 pb-3">
+    <div class="d-flex align-items-end flex-column">
+                <button
+                  class="btn btn-danger"
+                  type="button"
+                  @click="deleteCartAll()"
+                >
+                  清空購物車
+                </button>
+              </div>
+    <div class="d-flex align-items-end flex-column">
+      <div class="col pt-3">共 {{ carts.length }} 項商品，總數量 {{ carts.qty }}</div>
+      <div class="col pt-3">折扣金額：NT$ {{ }}元</div>
+      <div class="col pt-3 pb-3">總金額：NT$ {{ carts.final_total }}元</div>
+    </div>
+  </div>
+            <!--訂購人資訊-->
+            <div class="container bg-primary"><p class="pt-3 pb-3 px-2 mb-3 fs-5 fw-bold">訂購人資訊</p></div>
+            <div class="my-4 row justify-content-center">
               <v-form
                 ref="form"
                 class="col-md-6"
@@ -156,7 +181,7 @@
                   ></textarea>
                 </div>
                 <div class="text-end">
-                  <button type="submit" class="btn btn-danger">送出訂單</button>
+                  <button type="submit" class="btn btn-lg btn-primary text-white">前往結帳</button>
                 </div>
               </v-form>
  </div>
@@ -167,6 +192,8 @@
 <script>
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import cartStore from '@/stores/cartStore'
+import { mapActions } from 'pinia'
 import Loading from 'vue-loading-overlay'
 import 'vue-loading-overlay/dist/css/index.css'
 const { VITE_APP_API_URL, VITE_APP_API_NAME } = import.meta.env
@@ -214,29 +241,13 @@ export default {
         .get(`${VITE_APP_API_URL}/v2/api/${VITE_APP_API_NAME}/cart`)
         .then((res) => {
           this.carts = res.data.data
+          console.log(res.data.data)
         })
         .catch((err) => {
           console.log(err.response.data.message)
         })
     },
-    addCart (productId, qty = 1) {
-      const order = {
-        productId,
-        qty
-      }
-      this.status.addCartLoading = productId
-      axios
-        .post(`${VITE_APP_API_URL}/v2/api/${VITE_APP_API_NAME}/cart`, { data: order })
-        .then((res) => {
-          this.status.addCartLoading = ''
-          Swal.fire(res.data.message)
-          this.$refs.userModal.close()
-          this.getCart()
-        })
-        .catch((err) => {
-          console.log(err.response.data.message)
-        })
-    },
+    ...mapActions(cartStore, ['addCart']),
     changeCartNum (item, qty = 1) {
       const order = {
         product_id: item.product_id,

@@ -26,7 +26,7 @@
           <router-link to="/cart" class="position-relative">
             <p class="fs-2 bi bi-cart4 mx-2"></p>
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            {{ this.cart.length }}
+            {{ cart.length }}
             <span class="visually-hidden">unread messages</span>
             </span>
           </router-link>

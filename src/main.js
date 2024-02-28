@@ -17,6 +17,8 @@ import zhTW from '@vee-validate/i18n/dist/locale/zh_TW.json'
 import App from './App.vue'
 import router from './router'
 
+import { changeToMoney, changeDate } from './methods/filters'
+
 // 使用 Object.keys 將 AllRules 轉為陣列並使用 forEach 迴圈將驗證規則加入 VeeValidate
 Object.keys(AllRules).forEach((rule) => {
   defineRule(rule, AllRules[rule])
@@ -34,6 +36,11 @@ const app = createApp(App)
 app.component('VField', Field)
 app.component('VForm', Form)
 app.component('ErrorMessage', ErrorMessage)
+
+app.config.globalProperties.$filters = {
+  changeToMoney,
+  changeDate
+}
 
 app.use(createPinia())
 app.use(router)

@@ -1,4 +1,6 @@
 <template>
+    <LangyuanLoading v-model:active="isLoading">
+  </LangyuanLoading>
         <div class="text-end">
           <button class="btn btn-primary mt-4" @click="openModal('new')">
             建立新的產品
@@ -71,11 +73,13 @@ import axios from 'axios'
 import DeleteProductModal from '../../components/DeleteProductModal.vue'
 import PaginationComponent from '../../components/PaginationComponent.vue'
 import ProductsModal from '../../components/ProductsModal.vue'
+import LangyuanLoading from '../../components/LangyuanLoading.vue'
 const { VITE_APP_API_URL, VITE_APP_API_NAME } = import.meta.env
 
 export default {
   data () {
     return {
+      isLoading: true,
       products: [],
       isNew: false,
       tempProduct: {
@@ -92,6 +96,7 @@ export default {
         .then((response) => {
           this.products = response.data.products
           this.pages = response.data.pagination
+          this.isLoading = false
         })
         .catch((error) => {
           console.log(error)
@@ -154,7 +159,7 @@ export default {
         })
     }
   },
-  components: { DeleteProductModal, PaginationComponent, ProductsModal },
+  components: { DeleteProductModal, PaginationComponent, ProductsModal, LangyuanLoading },
   mounted () {
     this.getProductList()
   }

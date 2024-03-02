@@ -16,6 +16,14 @@ const routes = [
       {
         path: 'products',
         component: () => import('../views/front/ProductsView.vue')
+      },
+      {
+        path: 'order-confirmation',
+        component: () => import('../views/front/OrderConfView.vue')
+      },
+      {
+        path: 'q&a',
+        component: () => import('../views/front/QnaView.vue')
       }
     ]
   },

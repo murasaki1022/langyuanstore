@@ -3,12 +3,16 @@
   </LangyuanLoading>
 <div class="container">
  <div class="mt-4">
-   <div class="container bg-primary"><p class="pt-3 pb-3 px-2 mb-3 fs-5 fw-bold">購物明細</p></div>
+   <div class="container bg-primary">
+    <p class="pt-3 pb-3 px-2 mb-3 fs-5 fw-bold">
+      <i class="bi bi-journal-check px-2"></i>購物明細
+    </p>
+  </div>
                 <!-- 購物車列表 -->
               <table class="table align-middle">
-                <thead>
+                <thead class="bg-secondary3">
                   <tr>
-                    <th style="width: 200px"></th>
+                    <th class="my-2" style="width: 200px"></th>
                     <th class="text-center">品名</th>
                     <th class="text-end" style="width: 150px">數量/單位</th>
                     <th class="text-end" style="width: 150px">單價</th>
@@ -18,6 +22,7 @@
                 <tbody>
                   <tr v-for="cart in carts.carts" :key="cart.id">
                     <td
+                    class="my-2"
                     style="height: 200px;
                     background-size: cover;
                     background-position: center;"
@@ -59,33 +64,37 @@
                   </tr>
                 </tfoot>-->
               </table>
-  <div class="container bg-primary"><p class="pt-3 pb-3 px-2 mb-3 fs-5 fw-bold">折扣碼輸入</p></div>
-  <div class="row">
-    <div class="col d-flex flex-row-reverse">
+  <div class="container bg-secondary3 px-5 pt-3 pb-3 mb-3">
+    <div class="flex-column pt-3">
       <div class="input-group mb-3" style="width: 15rem">
        <input type="text" class="form-control" placeholder="輸入折扣碼" aria-label="Recipient's username" aria-describedby="button-addon2">
-       <button class="btn btn-outline-primary" type="button" id="button-addon2">使用<br>折扣碼</button>
-     </div>
+       <button class="btn btn-primary" type="button" id="button-addon2">使用<br>折扣碼</button>
     </div>
-  </div>
-  <div class="container bg-secondary3 px-5 pt-3 pb-3">
     <div class="d-flex align-items-end flex-column">
+      <div class="py-2">
+        共 {{ carts.length }} 項商品，總數量 {{ carts.qty }}
+      </div>
+  <!--<div class="col pt-3">折扣金額：NT$ {{ }}元</div>-->
+      <div class="py-1">
+        總金額：NT$ {{ carts.final_total }}元
+      </div>
+      <div class="pt-4 pb-2">
                 <button
                   class="btn btn-danger"
                   type="button"
-                  @click="deleteCartAll()"
-                >
+                  @click="deleteCartAll()">
                   清空購物車
                 </button>
-              </div>
-    <div class="d-flex align-items-end flex-column">
-      <div class="col pt-3">共 {{ carts.length }} 項商品，總數量 {{ carts.qty }}</div>
-      <div class="col pt-3">折扣金額：NT$ {{ }}元</div>
-      <div class="col pt-3 pb-3">總金額：NT$ {{ carts.final_total }}元</div>
+        </div>
     </div>
   </div>
+</div>
             <!--訂購人資訊-->
-            <div class="container bg-primary"><p class="pt-3 pb-3 px-2 mb-3 fs-5 fw-bold">訂購人資訊</p></div>
+            <div class="container bg-primary">
+              <p class="pt-3 pb-3 px-2 mb-3 fs-5 fw-bold">
+                <i class="bi bi-person-circle px-2"></i>訂購人資訊
+              </p>
+            </div>
             <div class="my-4 row justify-content-center">
               <v-form
                 ref="form"
@@ -176,7 +185,9 @@
                   ></textarea>
                 </div>
                 <div class="text-end">
-                  <button type="submit" class="btn btn-lg btn-primary text-white">前往結帳</button>
+                  <button type="button" class="btn btn-lg btn-secondary3 text-primary mx-3">
+                    <router-link to="/products" style="text-decoration: none;">回商品專區</router-link></button>
+                  <button type="submit" class="btn btn-lg btn-outline-primary">訂單確認</button>
                 </div>
               </v-form>
  </div>

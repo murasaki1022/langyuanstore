@@ -17,7 +17,7 @@
               <router-link class="nav-link fw-bold text-change" to="/products">商品專區</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link fw-bold text-change" to="/">常見問題</router-link>
+              <router-link class="nav-link fw-bold text-change" to="/q&a">常見問題</router-link>
             </li>
           </ul>
         </div>

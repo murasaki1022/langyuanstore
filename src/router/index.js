@@ -18,6 +18,10 @@ const routes = [
         component: () => import('../views/front/ProductsView.vue')
       },
       {
+        path: 'product/:id',
+        component: () => import('../views/front/ProductInfoView.vue')
+      },
+      {
         path: 'order-confirmation',
         component: () => import('../views/front/OrderConfView.vue')
       },

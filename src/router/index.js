@@ -24,6 +24,10 @@ const routes = [
       {
         path: 'q&a',
         component: () => import('../views/front/QnaView.vue')
+      },
+      {
+        path: 'search-order',
+        component: () => import('../views/front/SearchOrderView.vue')
       }
     ]
   },

@@ -4,7 +4,7 @@
         <p class="fs-2 fw-bold">
             <i class="bi bi-hash"></i>訂單常見問題
         </p>
-        <div class="accordion" id="accordionExample">
+        <div class="accordion container-lg container-md container-sm" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -32,7 +32,7 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingThree">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    訂單處於不同狀態時代表什麼，例如<strong>處理中</strong>、<strong>運送中</strong>和<strong>已送達</strong>？
+                    訂單處於不同狀態時代表什麼，例如處理中、運送中和已送達？
                 </button>
                 </h2>
                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
@@ -47,7 +47,7 @@
         <p class="fs-2 fw-bold">
             <i class="bi bi-hash"></i>付款運送說明
         </p>
-        <div class="accordion" id="accordionExample">
+        <div class="accordion container-lg container-md container-sm" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
@@ -90,7 +90,7 @@
         <p class="fs-2 fw-bold">
             <i class="bi bi-hash"></i>優惠券使用說明
         </p>
-        <div class="accordion" id="accordionExample">
+        <div class="accordion container-lg container-md container-sm" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
@@ -133,7 +133,7 @@
         <p class="fs-2 fw-bold">
             <i class="bi bi-hash"></i>退換貨說明
         </p>
-        <div class="accordion" id="accordionExample">
+        <div class="accordion container-lg container-md container-sm" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">

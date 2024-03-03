@@ -26,6 +26,10 @@ const routes = [
         component: () => import('../views/front/OrderConfView.vue')
       },
       {
+        path: 'payment/:id',
+        component: () => import('../views/front/PaymentView.vue')
+      },
+      {
         path: 'q&a',
         component: () => import('../views/front/QnaView.vue')
       },

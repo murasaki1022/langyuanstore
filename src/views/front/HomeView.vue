@@ -1,4 +1,5 @@
 <template>
+<LangyuanLoading v-model:active="isLoading"></LangyuanLoading>
   <div class="container">
     <div class="d-flex justify-content-center mt-5">
       <swiper
@@ -229,7 +230,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules'
 import axios from 'axios'
 import cartStore from '@/stores/cartStore'
 import { mapActions } from 'pinia'
-import 'vue-loading-overlay/dist/css/index.css'
+import LangyuanLoading from '../../components/LangyuanLoading.vue'
 const { VITE_APP_API_URL, VITE_APP_API_NAME } = import.meta.env
 
 export default {
@@ -277,7 +278,8 @@ export default {
   },
   components: {
     Swiper,
-    SwiperSlide
+    SwiperSlide,
+    LangyuanLoading
   },
   setup () {
     return {

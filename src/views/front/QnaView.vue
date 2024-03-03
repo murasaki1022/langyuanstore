@@ -173,10 +173,14 @@
         </div>
         </div>
     </div>
+    <langyuan-footer></langyuan-footer>
 </template>
 
 <script>
+import LangyuanFooter from '../../components/LangyuanFooter.vue'
 export default {
-
+  components: {
+    LangyuanFooter
+  }
 }
 </script>

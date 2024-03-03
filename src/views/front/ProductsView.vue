@@ -75,12 +75,14 @@
           </table>
       </div>
       </div>
+      <langyuan-footer></langyuan-footer>
 </template>
 
 <script>
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import LangyuanLoading from '../../components/LangyuanLoading.vue'
+import LangyuanFooter from '../../components/LangyuanFooter.vue'
 import UserModal from '../../components/UserModal.vue'
 const { VITE_APP_API_URL, VITE_APP_API_NAME } = import.meta.env
 
@@ -152,7 +154,8 @@ export default {
   },
   components: {
     UserModal,
-    LangyuanLoading
+    LangyuanLoading,
+    LangyuanFooter
   },
   mounted () {
     this.getProduct()

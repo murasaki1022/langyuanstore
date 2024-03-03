@@ -207,8 +207,6 @@ export default {
   data () {
     return {
       isLoading: true,
-      products: [],
-      tempProduct: {},
       carts: {},
       status: {
         addCartLoading: '',
@@ -226,21 +224,6 @@ export default {
     }
   },
   methods: {
-    getProduct () {
-      axios
-        .get(`${VITE_APP_API_URL}/v2/api/${VITE_APP_API_NAME}/products/all`)
-        .then((res) => {
-          this.products = res.data.products
-          this.isLoading = false
-        })
-        .catch((err) => {
-          console.log(err.response.data.message)
-        })
-    },
-    openModal (product) {
-      this.tempProduct = product
-      this.$refs.userModal.open()
-    },
     getCart () {
       axios
         .get(`${VITE_APP_API_URL}/v2/api/${VITE_APP_API_NAME}/cart`)

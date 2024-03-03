@@ -1,8 +1,9 @@
 <template>
       <div class="container-fluid mt-5">
         <div class="row justify-content-center">
-          <h1 class="h3 mb-3 font-weight-normal text-center">登入後台</h1>
-          <div class="col-6">
+        <img class="img-fluid" style="width: 150px; height:150px" src="@/assets/langyuanstorelogo.svg" alt="">
+          <h1 class="h3 mb-3 font-weight-normal text-center">後台管理員登入</h1>
+          <div class="col-4">
             <form id="form" class="form-signin" @submit.prevent="login">
               <div class="form-floating mb-3">
                 <input

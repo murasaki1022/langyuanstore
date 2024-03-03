@@ -335,7 +335,6 @@ export default {
     LangyuanLoading
   },
   mounted () {
-    this.getProduct()
     this.getCart()
   }
 

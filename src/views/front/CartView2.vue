@@ -76,7 +76,7 @@
                 <p class="mb-0 h4 fw-bold">Total</p>
                 <p class="mb-0 h4 fw-bold">NT${{ carts.final_total }}</p>
               </div>
-              <router-link to="/order-confirmation"><button type="submit" class="btn btn-primary w-100 mt-4">前往結帳</button></router-link>
+              <router-link to="/order-confirmation"><button type="submit" class="btn btn-primary w-100 mt-4">輸入訂購人資訊</button></router-link>
             </div>
           </div>
         </div>

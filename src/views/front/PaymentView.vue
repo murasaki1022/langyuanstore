@@ -65,18 +65,15 @@
           </div>
     </div>
 </div>
-<langyuan-footer></langyuan-footer>
 </template>
 
 <script>
 import axios from 'axios'
 import Swal from 'sweetalert2'
-import LangyuanFooter from '../../components/LangyuanFooter.vue'
 
 const { VITE_APP_API_URL, VITE_APP_API_NAME } = import.meta.env
 
 export default {
-  components: { LangyuanFooter },
   data () {
     return {
       order: {

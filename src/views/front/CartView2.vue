@@ -82,13 +82,11 @@
         </div>
       </div>
 </div>
-<langyuan-footer></langyuan-footer>
 </template>
 
 <script>
 import axios from 'axios'
 import Swal from 'sweetalert2'
-import LangyuanFooter from '../../components/LangyuanFooter.vue'
 // import LangyuanLoading from '../../components/LangyuanLoading.vue'
 const { VITE_APP_API_URL, VITE_APP_API_NAME } = import.meta.env
 
@@ -188,7 +186,7 @@ export default {
   },
   components: {
     // LangyuanLoading,
-    LangyuanFooter
+
   },
   mounted () {
     this.getCart()

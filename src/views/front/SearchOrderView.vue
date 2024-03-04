@@ -5,15 +5,10 @@
         <button class="btn btn-primary" type="button" id="button-addon2"><i class="bi bi-search"></i></button>
     </div>
 </div>
-<langyuan-footer></langyuan-footer>
 </template>
 
 <script>
-import LangyuanFooter from '../../components/LangyuanFooter.vue'
 
 export default {
-  components: {
-    LangyuanFooter
-  }
 }
 </script>

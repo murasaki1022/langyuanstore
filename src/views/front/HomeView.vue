@@ -119,7 +119,7 @@
             <div class="card-body">
               <h5 class="card-title fs-6 fw-bold">{{ product.title }}</h5>
               <p class="card-text">NT$ {{ product.price }}</p>
-              <a class="btn btn-primary d-flex justify-content-center"
+              <a type="button" class="btn btn-primary d-flex justify-content-center"
                 @click.prevent="addCart(product.id)">立即購買</a>
             </div>
           </div>
@@ -258,7 +258,7 @@ export default {
       this.tempProduct = product
       this.$refs.userModal.open()
     },
-    ...mapActions(cartStore, ['addCart']),
+    ...mapActions(cartStore, ['addCart', 'getCart']),
     changeCartNum (item, qty = 1) {
       const order = {
         product_id: item.product_id,

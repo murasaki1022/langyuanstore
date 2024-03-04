@@ -6,10 +6,12 @@
 
 <script>
 import LangyuanNavbar from '../../components/LangyuanNavbar.vue'
+import LangyuanFooter from '../../components/LangyuanFooter.vue'
 
 export default {
   components: {
-    LangyuanNavbar
+    LangyuanNavbar,
+    LangyuanFooter
   }
 }
 </script>

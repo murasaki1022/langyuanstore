@@ -61,7 +61,7 @@
                 </tr>
               </tfoot>
             </table>
-            <button type="submit" class="btn btn-primary w-100 mt-4">確認付款</button>
+            <button type="submit" class="btn btn-primary w-100 mt-4" @click.prevent="payOrder">確認付款</button>
           </div>
     </div>
 </div>
@@ -70,6 +70,7 @@
 
 <script>
 import axios from 'axios'
+import Swal from 'sweetalert2'
 import LangyuanFooter from '../../components/LangyuanFooter.vue'
 
 const { VITE_APP_API_URL, VITE_APP_API_NAME } = import.meta.env
@@ -93,6 +94,14 @@ export default {
           this.order = res.data.order
           console.log(res)
           this.orderProducts = Object.keys(this.order.products).map((i) => this.order.products[i])
+        })
+    },
+    payOrder () {
+      axios.post(`${VITE_APP_API_URL}/v2/api/${VITE_APP_API_NAME}/pay/${this.orderId}`)
+        .then((res) => {
+          console.log(res)
+          Swal.fire(res.data.message)
+          this.$router.push('/payment-complete')
         })
     }
   },

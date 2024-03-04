@@ -40,8 +40,8 @@
         <!-- 商品列表 -->
         <div class="col-md-8">
           <div class="row">
-          <div class="col-md-4 col-sm-6" v-for="product in products" :key="product.id">
-          <div class="card product-card mb-sm-4 ms-md-5">
+          <div class="col-md-4 col-sm" v-for="product in products" :key="product.id">
+          <div class="card product-card mb-sm-4 ms-md-5 m-sm-auto">
             <router-link :to="`/product/${product.id}`" class="card-product-link">
             <img :src="product.imageUrl" class="card-product-img" />
             </router-link>

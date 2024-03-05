@@ -3,7 +3,7 @@
         <div class="row justify-content-center">
         <img class="img-fluid" style="width: 150px; height:150px" src="@/assets/langyuanstorelogo.svg" alt="">
           <h1 class="h3 mb-3 font-weight-normal text-center">後台管理員登入</h1>
-          <div class="col-4">
+          <div class="col-6 col-md-4">
             <form id="form" class="form-signin" @submit.prevent="login">
               <div class="form-floating mb-3">
                 <input
@@ -31,7 +31,13 @@
               <button class="btn btn-lg btn-primary w-100 mt-3" type="submit">
                 登入
               </button>
+              <router-link to="/">
+                <button type="button" class="btn btn-outline-primary btn-sm w-100 mt-3">
+                回到首頁
+                </button>
+              </router-link>
             </form>
+
           </div>
         </div>
       </div>

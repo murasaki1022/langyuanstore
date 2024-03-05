@@ -2,55 +2,53 @@
 <LangyuanLoading v-model:active="isLoading">
 </LangyuanLoading>
 <div class="container">
-      <div class="row align-items-center mt-5">
-        <div class="col-md-6">
+      <div class="row m-sm-auto">
+        <div class="col-12 my-4">
+          <div class="path">
+            <router-link to="/" style="text-decoration: none;">首頁</router-link>
+            &gt;
+            <router-link to="/products" style="text-decoration: none;">全部商品</router-link>
+            &gt; {{ productInfo.title }}
+          </div>
+        </div>
+        <div class="col-md-6 align-items-center">
         <img class="img-fluid" :src="productInfo.imageUrl" alt="">
         </div>
         <div class="col-md-5">
-          <h2 class="fw-bold h1 mb-1">{{ productInfo.title }}</h2>
-          <p class="mb-0 text-muted text-end">原價<del>NT${{ productInfo.origin_price }}</del></p>
-          <p class="h4 fw-bold text-end">現正特價NT${{ productInfo.price }}</p>
-          <div class="row align-items-center">
-            <div class="col-6">
-              <div class="input-group my-3 bg-light rounded">
-                <div class="input-group-prepend">
-                  <button class="btn btn-outline-dark border-0 py-2" type="button" id="button-addon1">
-                    <i class="bi bi-dash-circle"></i>
-                  </button>
-                </div>
-                <input type="text" class="form-control border-0 text-center my-auto shadow-none bg-light"
-                v-model="qty"
-                aria-label="Example text with button addon" aria-describedby="button-addon1" min="1" value="1">
-                <div class="input-group-append">
-                  <button class="btn btn-outline-dark border-0 py-2" type="button" id="button-addon2">
-                    <i class="bi bi-plus-circle"></i>
-                  </button>
-                </div>
+          <h2 class="fw-bold h1 mb-4">{{ productInfo.title }}</h2>
+          <h4><span class="badge rounded-pill bg-primary mb-2">{{productInfo.category}}</span></h4>
+            <div class="row d-flex flex-column">
+            <div class="col">
+            <p class="fs-5 text-secondary2">{{ productInfo.description }}</p>
+            </div>
+            <div class="col">
+            <p class="text-muted">規格：{{ productInfo.content }}</p>
+            </div>
+            </div>
+          <p class="mb-0 text-muted ">原價<del>NT${{ productInfo.origin_price }}</del></p>
+          <p class="h4 fw-bold">現正特價<span class="text-primary"> NT${{ productInfo.price }}</span><span class="ms-3">/ {{ productInfo.unit }}</span></p>
+          <div class="row d-flex mt-5">
+              <div class="col-3 col-md-4">
+                <select class="form-select" v-model.number="qty">
+                    <option v-for="i in 10" :key="`add-${i}-count`">
+                      {{ i }}
+                    </option>
+              </select>
               </div>
-            </div>
-            <div class="col-6">
-              <a class="btn btn-primary d-flex justify-content-center text-white"
-                @click.prevent="addCart(productInfo.id,qty)"><i class="bi bi-cart-plus-fill  me-2"></i>加入購物車</a>
-            </div>
+              <div class="col-5 col-md-8">
+                <a class="btn btn-primary d-flex justify-content-center text-white"
+                  @click.prevent="addCart(productInfo.id,qty)"><i class="bi bi-cart-plus-fill  me-2"></i>加入購物車</a>
+              </div>
           </div>
+
         </div>
       </div>
-      <div class="row my-5">
-        <div class="col-md-4">
-          <p>{{ productInfo.description }}</p>
-        </div>
-        <div class="col-md-3">
-          <p class="text-muted">{{ productInfo.content }}</p>
-        </div>
-      </div>
-      <h3 class="fw-bold">更多推薦商品</h3>
+      <h3 class="fw-bold mt-5">更多推薦商品</h3>
       <hr class="mb-5">
       <swiper
+    :autoplay = true
     :slidesPerView="1"
     :spaceBetween="10"
-    :pagination="{
-      clickable: true,
-    }"
     :breakpoints="{
       '375': {
         slidesPerView: 1,
@@ -114,6 +112,7 @@ export default {
       isLoading: true,
       products: [],
       productInfo: [],
+      qty: 1,
       carts: {},
       status: {
         addCartLoading: '',
@@ -161,7 +160,7 @@ export default {
           Swal.fire(res.data.message)
         })
         .catch((err) => {
-          console.log(err)
+          console.log(err.response.data.message)
         })
     },
     changeCartNum (item, qty = 1) {

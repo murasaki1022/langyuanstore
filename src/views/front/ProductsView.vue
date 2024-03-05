@@ -13,7 +13,7 @@
       <div class="row d-flex justify-content-end ">
           <div class="col-md-3">
             <div class="input-group w-md-50 mt-md-0 mt-3">
-              <input type="text" class="form-control rounded-0 border-primary" placeholder="要找什麼商品呢?" />
+              <input type="text" v-model.trim="search" class="form-control rounded-0 border-primary" placeholder="要找什麼商品呢?" />
               <div class="input-group-append">
                 <button class="btn btn-primary rounded-0" type="button" id="search">
                   <i class="bi bi-search-heart"></i>
@@ -58,7 +58,7 @@
             <PaginationComponent
             :pages="pages"
             @change-pages="getProduct"
-            class="d-flex justify-content-center mb-4 mb-md-6"
+            class="d-flex justify-content-center mb-4 mb-md-6 m-auto"
           ></PaginationComponent>
         </div>
       </div>
@@ -76,6 +76,7 @@ export default {
   data () {
     return {
       isLoading: true,
+      search: '',
       pages: {},
       products: [],
       category: '',
@@ -96,6 +97,8 @@ export default {
           this.pages = res.data.pagination
           this.category = category
           this.isLoading = false
+          // 關鍵字搜尋
+          this.products = this.products.filter(item => item.title.trim().toLowerCase().includes(this.search.toLowerCase()))
         })
         .catch((err) => {
           console.log(err.data.message)
@@ -145,6 +148,12 @@ export default {
   components: {
     LangyuanLoading,
     PaginationComponent
+  },
+  watch: {
+    search (newVal) {
+    // 在這裡執行即時搜尋，例如調用 getProduct 方法
+      this.getProduct(1, newVal)
+    }
   },
   mounted () {
     this.getProduct()

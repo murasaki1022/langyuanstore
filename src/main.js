@@ -46,3 +46,8 @@ app.use(createPinia())
 app.use(router)
 
 app.mount('#app')
+
+// 跳轉後返回頁面頂端
+router.afterEach((to, from, next) => {
+  window.scrollTo(0, 0)
+})

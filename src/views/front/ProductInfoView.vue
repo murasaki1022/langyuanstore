@@ -196,6 +196,14 @@ export default {
   computed: {
     ...mapState(cartStore, ['cart'])
   },
+  watch: {
+    '$route.params': {
+      handler () {
+        this.getProductInfo()
+      },
+      deep: true
+    }
+  },
   mounted () {
     this.getProduct()
     this.getProductInfo()

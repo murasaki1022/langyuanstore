@@ -153,9 +153,9 @@ export default {
     PaginationComponent
   },
   watch: {
-    search (newVal) {
+    search () {
     // 在這裡執行即時搜尋，例如調用 getProduct 方法
-      this.getProduct(1, newVal)
+      this.getProduct(1, '')
     }
   },
   computed: {

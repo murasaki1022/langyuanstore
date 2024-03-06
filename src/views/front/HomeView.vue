@@ -4,7 +4,7 @@
     <div class="d-flex justify-content-center mt-5">
       <swiper
         :autoplay="{
-        delay: 2500,
+        delay: 4000,
         disableOnInteraction: false,
         }"
         :pagination="true"
@@ -14,8 +14,8 @@
       >
         <swiper-slide
           ><img
-            style="width: 50rem"
-            src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?q=80&w=1886&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            style="width: 100%"
+            src="https://storage.googleapis.com/vue-course-api.appspot.com/langyuanstore/1709761717400.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=lIA0tvVWHKM5MjS8MJFe3sgoJTpcrnMvAps8qSZ1Nm40VTfNZNJt%2FJTGIr%2FLYVH3T2CvV9u7kmXngDRt9zC0uH7go%2FqfzhiyBZNwbI9auk4G0bDPNmR96Jxp8n8rkM2ioGmcUTC20p0YNrK3o6kt8uwFbKNLo0ntamDEJbyvu64tG%2F5bNLMTxIH%2FopTmPgxv%2F0cd6rvXMTs9ihMn9r3ppQ4yLQs6ERCsiNY4O%2FzBSEcsPprxU4KYCRuU4WE1qKsuqZG1Xr46v6xYXNb%2BAHchhDSel52h3b%2FGe1MAdWoGHO0IijfhO0uPseCtyggcceIvEJLHCuxJJMxVmfTV0C5N7A%3D%3D"
             alt=""
         /></swiper-slide>
         <swiper-slide
@@ -67,68 +67,71 @@
         alt=""
       />
     </div>
-    <div class="row">
-      <div class="col">
-        <img
-          class="w-100 h-auto rounded"
-          src="https://images.unsplash.com/photo-1597843786411-a7fa8ad44a95?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt=""
-        />
-      </div>
-      <div class="col">
-        <img
-          class="w-100 h-auto rounded"
-          src="https://images.unsplash.com/photo-1597843786411-a7fa8ad44a95?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt=""
-        />
+    </div>
+    <div class="container text-center">
+      <div class="row  d-flex justify-content-around">
+        <div class="col">
+          <img
+            class="img-fluid rounded card-product-img"
+            style="width: auto; height:80%;"
+            src="https://storage.googleapis.com/vue-course-api.appspot.com/langyuanstore/1709759477846.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=O75aBurFDP%2BJc%2FIbmZ%2FPgWgeeatBQb%2FzTwcY%2FcGr06K8Z8AI%2BDA15lETCBZSUXz%2FEo3DwgdiiBlfFmnsL1Q4Dj0uLFBMU0v1Ss8cGlGi8wuxJdnk6jDPl9DWDtIrpbZJIOPZt4nU4edIB1ZJ1k4T2tMlYk3GjXj8fIOS8zDh3iHNlEdEBUY9c5S1fNfvbkgjG9kPqJrB3rZ4T%2BN9LYCqv5xCD36hkxEt1UHg%2FddaTrKAffUNXcmFBKOkEA%2BMVYPkH5o1j0Z9ZhFVL%2FiobPb5Tjn8VHreTTwJBEQYdcnH%2Fp202Ag8MWUrMleu6fIUa3Bq3cVfwoKiCDXUW1CNLqA1AQ%3D%3D"
+            alt=""
+          />
+        </div>
+        <div class="col">
+        <router-link :to="`/products`">
+            <img
+              class="img-fluid rounded card-product-img"
+              style="width: auto; height:80%"
+              src="https://storage.googleapis.com/vue-course-api.appspot.com/langyuanstore/1709758075985.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=WWF3ZdHMzarwyY2IeCpNwAl3B%2FSQjq7wblEZizzo1sJXnFux2TZIK2wIteBrJb8mjkRmoZa1ouNTnm2rfiLCbdZWbq36ZuQnDVXOu0pwiSdUbuWyapKigw875eN10XDLYiptwUv%2BhV1X%2Bc%2B9GsFvdI5CzL1Xl0CXmg%2FQHP1ICIHwmXTdeJUFG9tld%2BUfHJOqb%2F3Jmk1bHWcdE3Fvn3JpQjPS1FR9x13UVmMHDRbJ%2By1Ql9AxjFMY4vag9CVORcJyAme851hnB6n3NtVVt6hsB4omouCMhB3zAd%2B25JZZcsurovQOA%2B1LyRwahAK08eqXh3OI%2BDlsv0b95aaVL0xm%2FA%3D%3D"
+              alt=""
+            />
+        </router-link>
+        </div>
       </div>
     </div>
     <p class="d-flex justify-content-center fs-2 fw-bold mb-3 mt-5">熱銷商品</p>
     <div class="d-flex justify-content-center">
-    <swiper
+      <swiper
+    :autoplay = true
     :slidesPerView="1"
     :spaceBetween="10"
-    :pagination="{
-      clickable: true,
-    }"
     :breakpoints="{
-      '640': {
-        slidesPerView: 2,
-        spaceBetween: 20,
+      '375': {
+        slidesPerView: 1,
+        spaceBetween: 10,
       },
       '768': {
-        slidesPerView: 4,
-        spaceBetween: 40,
+        slidesPerView: 3,
+        spaceBetween: 30,
       },
       '1024': {
-        slidesPerView: 5,
-        spaceBetween: 50,
+        slidesPerView: 4,
+        spaceBetween: 30,
       },
     }"
     :modules="modules"
     class="mySwiper">
     <swiper-slide v-for="product in products" :key="product.id">
-      <div class="row row-cols-md-4 row-cols-sm-2 g-3">
-      <div class="col-xs-2 col-sm col-md-4 col-lg">
-          <div class="card" style="width: 14rem">
-            <div
-            style="height: 200px; background-size: cover; background-position: center;"
-            :style="{backgroundImage:`url(${product.imageUrl})`}"
-            class="card-img-top"
-            alt=""></div>
+      <div class="row">
+          <div class="col-md-4 col-sm">
+          <div class="card product-card mb-sm-4 ms-md-4 m-sm-auto">
+            <router-link :to="`/product/${product.id}`" class="card-product-link">
+            <img :src="product.imageUrl" class="card-product-img" />
+            </router-link>
             <div class="card-body">
+              <span class="badge rounded-pill bg-primary mb-2">{{product.category}}</span>
               <h5 class="card-title fs-6 fw-bold">{{ product.title }}</h5>
               <p class="card-text">NT$ {{ product.price }}</p>
-              <a type="button" class="btn btn-primary d-flex justify-content-center"
-                @click.prevent="addCart(product.id)">立即購買</a>
+              <a class="btn btn-primary d-flex justify-content-center text-white"
+                @click.prevent="addCart(product.id)"><i class="bi bi-cart-plus-fill  me-2"></i>加入購物車</a>
             </div>
           </div>
-        </div>
-      </div>
+            </div>
+          </div>
       </swiper-slide>
   </swiper>
   </div>
-</div>
   <div class="bg-secondary3 pb-5">
     <div class="d-flex justify-content-center fs-2 fw-bold mt-5 pt-5">
       好評推薦

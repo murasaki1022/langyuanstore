@@ -101,6 +101,8 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules'
 
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import cartStore from '@/stores/cartStore'
+import { mapActions, mapState } from 'pinia'
 import LangyuanLoading from '../../components/LangyuanLoading.vue'
 import * as bootstrap from 'bootstrap'
 window.bootstrap = bootstrap
@@ -163,6 +165,7 @@ export default {
           console.log(err.response.data.message)
         })
     },
+    ...mapActions(cartStore, ['addCart', 'getCart']),
     changeCartNum (item, qty = 1) {
       const order = {
         product_id: item.product_id,
@@ -190,9 +193,13 @@ export default {
       modules: [Autoplay, Pagination, Navigation]
     }
   },
+  computed: {
+    ...mapState(cartStore, ['cart'])
+  },
   mounted () {
     this.getProduct()
     this.getProductInfo()
+    this.getCart()
   }
 
 }

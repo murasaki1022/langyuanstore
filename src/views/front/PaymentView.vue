@@ -70,7 +70,8 @@
 <script>
 import axios from 'axios'
 import Swal from 'sweetalert2'
-
+import cartStore from '@/stores/cartStore'
+import { mapActions, mapState } from 'pinia'
 const { VITE_APP_API_URL, VITE_APP_API_NAME } = import.meta.env
 
 export default {
@@ -100,7 +101,11 @@ export default {
           Swal.fire(res.data.message)
           this.$router.push('/payment-complete')
         })
-    }
+    },
+    ...mapActions(cartStore, ['getCart'])
+  },
+  computed: {
+    ...mapState(cartStore, ['cart'])
   },
   mounted () {
     this.getOrder(this.orderId)

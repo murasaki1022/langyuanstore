@@ -68,6 +68,8 @@
 <script>
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import cartStore from '@/stores/cartStore'
+import { mapActions, mapState } from 'pinia'
 import LangyuanLoading from '../../components/LangyuanLoading.vue'
 import PaginationComponent from '../../components/PaginationComponent.vue'
 const { VITE_APP_API_URL, VITE_APP_API_NAME } = import.meta.env
@@ -128,6 +130,7 @@ export default {
           console.log(err)
         })
     },
+    ...mapActions(cartStore, ['addCart', 'getCart']),
     changeCartNum (item, qty = 1) {
       const order = {
         product_id: item.product_id,
@@ -155,8 +158,12 @@ export default {
       this.getProduct(1, newVal)
     }
   },
+  computed: {
+    ...mapState(cartStore, ['cart'])
+  },
   mounted () {
     this.getProduct()
+    this.getCart()
   }
 
 }

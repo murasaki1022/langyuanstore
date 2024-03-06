@@ -20,7 +20,7 @@ export default defineStore('cartStore', {
           this.cart = res.data.data.carts
           this.final_total = res.data.data.final_total
           this.total = res.data.data.total
-          console.log('pinia', this.final_total)
+          console.log('pinia', res)
         })
     },
     addCart (id) {

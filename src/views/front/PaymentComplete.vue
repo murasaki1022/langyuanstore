@@ -19,7 +19,7 @@
 
 <script>
 import cartStore from '@/stores/cartStore'
-import { mapActions } from 'pinia'
+import { mapState, mapActions } from 'pinia'
 
 export default {
   data () {
@@ -28,6 +28,12 @@ export default {
   },
   methods: {
     ...mapActions(cartStore, ['getCart'])
+  },
+  computed: {
+    ...mapState(cartStore, ['cart'])
+  },
+  mounted () {
+    this.getCart()
   }
 }
 

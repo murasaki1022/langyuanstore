@@ -176,7 +176,18 @@
 </template>
 
 <script>
+import cartStore from '@/stores/cartStore'
+import { mapActions, mapState } from 'pinia'
 
 export default {
+  methods: {
+    ...mapActions(cartStore, ['addCart', 'getCart'])
+  },
+  computed: {
+    ...mapState(cartStore, ['cart'])
+  },
+  mounted () {
+    this.getCart()
+  }
 }
 </script>

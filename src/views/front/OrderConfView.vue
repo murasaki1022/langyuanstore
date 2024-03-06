@@ -10,7 +10,7 @@
       <div class="row flex-row-reverse justify-content-center pb-5">
         <div class="col-md-4">
           <div class="border p-4 mb-4">
-            <div class="d-flex mt-2" v-for="cart in carts.carts" :key="cart.id">
+            <div class="d-flex mt-2" v-for="cart in cart" :key="cart.id">
               <div class="me-2" style="width: 48px; height: 48px;
               background-size: cover; background-position: center;"
               :style="{backgroundImage:`url(${cart.product.imageUrl})`}"></div>
@@ -145,6 +145,8 @@
 <script>
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import cartStore from '@/stores/cartStore'
+import { mapActions, mapState } from 'pinia'
 import LangyuanLoading from '../../components/LangyuanLoading.vue'
 const { VITE_APP_API_URL, VITE_APP_API_NAME } = import.meta.env
 
@@ -165,17 +167,18 @@ export default {
     }
   },
   methods: {
-    getCart () {
-      axios
-        .get(`${VITE_APP_API_URL}/v2/api/${VITE_APP_API_NAME}/cart`)
-        .then((res) => {
-          this.carts = res.data.data
-          console.log(res.data.data)
-        })
-        .catch((err) => {
-          console.log(err.response.data.message)
-        })
-    },
+    //    getCart () {
+    //      axios
+    //        .get(`${VITE_APP_API_URL}/v2/api/${VITE_APP_API_NAME}/cart`)
+    //        .then((res) => {
+    //          this.carts = res.data.data
+    //          console.log(res.data.data)
+    //        })
+    //        .catch((err) => {
+    //          console.log(err.response.data.message)
+    //        })
+    //    },
+    ...mapActions(cartStore, ['addCart', 'getCart']),
     onSubmit () {
       const userOrder = this.form
       axios
@@ -205,6 +208,9 @@ export default {
   },
   components: {
     LangyuanLoading
+  },
+  computed: {
+    ...mapState(cartStore, ['cart'])
   }
 }
 </script>

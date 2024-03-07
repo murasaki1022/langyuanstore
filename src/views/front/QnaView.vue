@@ -1,10 +1,10 @@
 <template>
-    <div class="container mt-5">
-        <div class="container-lg container-md container-sm mb-4" style="width: 800px">
+    <div class="container-fluid mt-5">
+        <div class="container-lg container-md container-sm mb-4">
         <p class="fs-2 fw-bold">
             <i class="bi bi-hash"></i>訂單常見問題
         </p>
-        <div class="accordion container-lg container-md container-sm" id="accordionExample">
+        <div class="accordion container-fluid" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -43,11 +43,11 @@
             </div>
         </div>
         </div>
-        <div class="container-lg container-md container-sm mb-4" style="width: 800px">
+        <div class="container-lg container-md container-sm mb-4">
         <p class="fs-2 fw-bold">
             <i class="bi bi-hash"></i>付款運送說明
         </p>
-        <div class="accordion container-lg container-md container-sm" id="accordionExample">
+        <div class="accordion container-fluid" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
@@ -86,11 +86,11 @@
             </div>
         </div>
         </div>
-        <div class="container-lg container-md container-sm mb-4" style="width: 800px">
+        <div class="container-lg container-md container-sm mb-4">
         <p class="fs-2 fw-bold">
             <i class="bi bi-hash"></i>優惠券使用說明
         </p>
-        <div class="accordion container-lg container-md container-sm" id="accordionExample">
+        <div class="accordion container-fluid" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
@@ -129,11 +129,11 @@
             </div>
         </div>
         </div>
-        <div class="container-lg container-md container-sm mb-5" style="width: 800px">
+        <div class="container-lg container-md container-sm mb-5">
         <p class="fs-2 fw-bold">
             <i class="bi bi-hash"></i>退換貨說明
         </p>
-        <div class="accordion container-lg container-md container-sm" id="accordionExample">
+        <div class="accordion container-fluid" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">

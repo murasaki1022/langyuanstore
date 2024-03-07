@@ -4,7 +4,7 @@
     <div class="d-flex justify-content-center mt-5">
       <swiper
         :autoplay="{
-        delay: 4000,
+        delay: 6000,
         disableOnInteraction: false,
         }"
         :pagination="true"
@@ -17,29 +17,12 @@
             style="width: 100%"
             src="https://storage.googleapis.com/vue-course-api.appspot.com/langyuanstore/1709761717400.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=lIA0tvVWHKM5MjS8MJFe3sgoJTpcrnMvAps8qSZ1Nm40VTfNZNJt%2FJTGIr%2FLYVH3T2CvV9u7kmXngDRt9zC0uH7go%2FqfzhiyBZNwbI9auk4G0bDPNmR96Jxp8n8rkM2ioGmcUTC20p0YNrK3o6kt8uwFbKNLo0ntamDEJbyvu64tG%2F5bNLMTxIH%2FopTmPgxv%2F0cd6rvXMTs9ihMn9r3ppQ4yLQs6ERCsiNY4O%2FzBSEcsPprxU4KYCRuU4WE1qKsuqZG1Xr46v6xYXNb%2BAHchhDSel52h3b%2FGe1MAdWoGHO0IijfhO0uPseCtyggcceIvEJLHCuxJJMxVmfTV0C5N7A%3D%3D"
             alt=""
-        /></swiper-slide>
+        />
+        </swiper-slide>
         <swiper-slide
           ><img
-            style="width: 50rem"
-            src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-        /></swiper-slide>
-        <swiper-slide
-          ><img
-            style="width: 50rem"
-            src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-        /></swiper-slide>
-        <swiper-slide
-          ><img
-            style="width: 50rem"
-            src="https://images.unsplash.com/photo-1601758177266-bc599de87707?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-        /></swiper-slide>
-        <swiper-slide
-          ><img
-            style="width: 50rem"
-            src="https://images.unsplash.com/photo-1573435567032-ff5982925350?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            style="width: 100%"
+            src="https://storage.googleapis.com/vue-course-api.appspot.com/langyuanstore/1709842871677.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=mpdhmaoSoSCsOQLZoIutXyvg45CTO2UgaVlw4x7mIYgdRsSGulYd1twnaL5RHNAi2BsQAqBYL9My3qPf7iYTbHukbeAcnmFzl7N%2FxhsjRQtT5kY62DxV12qiA0xDJW5Z%2F7wOGptE8EhMDql2MrsVkMHgygCtBoO15QpntB0bttdE%2BqKb5aR1eLtBF6N3WawbFJmHlzE%2BeKBg0ynxptQ98ykBFXnxAIteW0Xzcrfxz%2Fkc1V%2F1l1cB4SmCxYQHleSfFodMGA2xq4bXcLTgUhpo5g7lX73KHCgI95RaOc5fL6U25Ye0frLx9U6jNJ0385XD229mWn21dkNWEDmXE1LMnA%3D%3D"
             alt=""
         /></swiper-slide>
       </swiper>
@@ -47,23 +30,25 @@
   </div>
     <div class="bg-secondary3 mt-5 pt-5 pb-5">
       <div class="container">
-      <h3 class="d-flex justify-content-left fw-bold pt-2">關於浪元</h3>
-      <p class="d-flex justify-content-left pt-2">
-        浪圓，帶著給予流浪動物與人的團圓。
-        「浪」代表著流浪貓狗的意思；「圓」為團圓的意思，給予浪浪們有一個與新家人團圓的期望。
+      <h3 class="d-flex justify-content-center fw-bold pt-2">關於浪元
+      <img src="@/assets/langyuanstorelogo.svg" class="img-fluid ms-3" style="height: 32px;" alt="">
+      <span class="text-secondary2 mx-2">x</span>
+      <img src="@/assets/langyuanlogo.svg" class="img-fluid" style="height: 32px;" alt=""></h3>
+      <hr>
+      <p class="d-flex justify-content-center pt-2">
+        「浪元小賣店」與浪圓寵物領養平台攜手，專營高品質寵物用品。每筆盈餘致力支持浪圓的救援使命，為更多毛小孩尋找安心家庭。
       </p>
-      <p class="d-flex justify-content-left">
-        浪圓致力於發展流浪動物的媒合平台，以更有效的方法整合及提供各種小學堂讓大眾能更了解基本小資訊，提高毛孩們找到新的家。
-        期待你的加入，讓我們一起，帶牠回家。
+      <p class="d-flex justify-content-center">
+        選擇我們，不僅為您的寵物提供品質生活，更是為流浪動物帶來愛與溫暖。感謝您的支持，共同為浪圓的使命努力，讓愛無所不在。
       </p>
       </div>
     </div>
   <div class="container">
     <div class="d-flex justify-content-center mb-5 mt-5">
       <img
-        class="rounded w-100 h-auto"
-        style="height: 25rem"
-        src="https://cdn-v4.petpetgo.com/1500/public/a0318a6f-6f72-4da1-83f3-f590989836f6.jpg"
+        class="img-fluid"
+        style="width: 90%; height:auto;"
+        src="https://storage.googleapis.com/vue-course-api.appspot.com/langyuanstore/1709839733636.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=Sxfa6dnAowTOi%2FV2vEuOvs6ssVnLneb1nT2ABHXluC0XJmepNI1YImS4H55x004o%2FFdtqOkPPZjmSZ9euf%2BkBwVNtocfMxTNIJ7Qmwpg3%2BG3K8yd8Pas43rW4SjzR2GqwBfq1fAalQhzE1Wm%2BJWADVCRkq5RwKzfC9mLyI0DL3df49D7re%2FwDC%2BKr4Zv24eUJFI2FKedK2qgr72agltHCkUlwgveNKXyJWm1txXbZOTW2wwLXAPKNJE0uxsBDQUu2STBuuylQvJUyOnnwy8TokzD4fywjmJJJS1JU3W5a7ibTOQSaSVNyAMHXx0YbstJ5quQATfT9u5qrMDCKDBmYQ%3D%3D"
         alt=""
       />
     </div>

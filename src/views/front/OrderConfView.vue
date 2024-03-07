@@ -26,7 +26,7 @@
               <tbody>
                 <tr>
                   <th scope="row" class="border-0 px-0 pt-4 font-weight-normal">Subtotal</th>
-                  <td class="text-end border-0 px-0 pt-4">NT${{ carts.final_total }}</td>
+                  <td class="text-end border-0 px-0 pt-4">NT${{ final_total }}</td>
                 </tr>
                 <tr>
                   <th scope="row" class="border-0 px-0 pt-0 pb-4 font-weight-normal">Payment</th>
@@ -36,7 +36,7 @@
             </table>
             <div class="d-flex justify-content-between mt-4">
               <p class="mb-0 h4 fw-bold">Total</p>
-              <p class="mb-0 h4 fw-bold">NT${{ carts.final_total }}</p>
+              <p class="mb-0 h4 fw-bold">NT${{ final_total }}</p>
             </div>
           </div>
         </div>
@@ -167,17 +167,6 @@ export default {
     }
   },
   methods: {
-    //    getCart () {
-    //      axios
-    //        .get(`${VITE_APP_API_URL}/v2/api/${VITE_APP_API_NAME}/cart`)
-    //        .then((res) => {
-    //          this.carts = res.data.data
-    //          console.log(res.data.data)
-    //        })
-    //        .catch((err) => {
-    //          console.log(err.response.data.message)
-    //        })
-    //    },
     ...mapActions(cartStore, ['addCart', 'getCart']),
     onSubmit () {
       const userOrder = this.form
@@ -210,7 +199,7 @@ export default {
     LangyuanLoading
   },
   computed: {
-    ...mapState(cartStore, ['cart'])
+    ...mapState(cartStore, ['cart', 'final_total'])
   }
 }
 </script>

@@ -9,6 +9,7 @@ const { VITE_APP_API_URL, VITE_APP_API_NAME } = import.meta.env
 export default defineStore('cartStore', {
   state: () => ({
     cart: [],
+    carts: {},
     final_total: 0,
     total: 0
   }),
@@ -20,7 +21,6 @@ export default defineStore('cartStore', {
           this.cart = res.data.data.carts
           this.final_total = res.data.data.final_total
           this.total = res.data.data.total
-          console.log('pinia', res)
         })
     },
     addCart (id) {

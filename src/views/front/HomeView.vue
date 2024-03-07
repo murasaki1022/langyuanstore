@@ -123,8 +123,8 @@
               <span class="badge rounded-pill bg-primary mb-2">{{product.category}}</span>
               <h5 class="card-title fs-6 fw-bold">{{ product.title }}</h5>
               <p class="card-text">NT$ {{ product.price }}</p>
-              <a class="btn btn-primary d-flex justify-content-center text-white"
-                @click.prevent="addCart(product.id)"><i class="bi bi-cart-plus-fill  me-2"></i>加入購物車</a>
+              <button class="btn btn-primary mx-auto px-4 d-flex justify-content-center text-white"
+                @click.prevent="addCart(product.id)"><i class="bi bi-cart-plus-fill me-2"></i>加入購物車</button>
             </div>
           </div>
             </div>

@@ -134,7 +134,7 @@
             style="width: 18rem;  height:12rem;"
             alt=""
           />
-          <p class="fs-4 fw-bold mt-3">扭扭</p>
+          <p class="fs-4 fw-bold img-fluid mt-3">扭扭</p>
           <a href="https://murasaki1022.github.io/langyuanstore/#/product/-Nocs9XwxWKcWd2509R2" class=""><p class="fs-5">貓咪優格口味食物罐</p></a>
           <p class="mx-5">
             自從在寵物展買過汪喵挑嘴罐後，扭扭一試成主顧，終於！終結了媽媽找不到適合又安心的罐罐噩夢！
@@ -142,7 +142,7 @@
         </div>
         <div class="col-md-3 col-lg-3 text-center mx-3 mt-2">
           <img
-            class="rounded-pill object-fit-cover"
+            class="rounded-pill object-fit-cover img-fluid"
             src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             style="width: 18rem; height:12rem"
             alt=""
@@ -155,7 +155,7 @@
         </div>
         <div class="col-md-3 col-lg-3 text-center mx-3 mt-2">
           <img
-            class="rounded-pill object-fit-cover"
+            class="rounded-pill object-fit-cover img-fluid"
             src="https://images.unsplash.com/photo-1580238169544-86bf7cd8c84c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             style="width: 18rem;  height:12rem;"
             alt=""

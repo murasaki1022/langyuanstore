@@ -38,23 +38,25 @@
         </div>
         </div>
         <!-- 商品列表 -->
-        <div class="col-md-8">
-          <div class="row">
-          <div class="col-md-4 col-sm" v-for="product in products" :key="product.id">
-          <div class="card product-card mb-sm-4 ms-md-5 m-sm-auto">
-            <router-link :to="`/product/${product.id}`" class="card-product-link">
-            <img :src="product.imageUrl" class="card-product-img" />
-            </router-link>
-            <div class="card-body">
-              <span class="badge rounded-pill bg-primary mb-2">{{product.category}}</span>
-              <h5 class="card-title fs-6 fw-bold">{{ product.title }}</h5>
-              <p class="card-text">NT$ {{ product.price }}</p>
-              <a class="btn btn-primary d-flex justify-content-center text-white"
-                @click.prevent="addCart(product.id)"><i class="bi bi-cart-plus-fill  me-2"></i>加入購物車</a>
+        <div class="col-md-9">
+        <div class="container">
+            <div class="row m-auto">
+            <div class="col-xl-4 col-lg-5  col-md-6 col-sm product-list m-auto" v-for="product in products" :key="product.id">
+            <div class="card product-card mb-sm-4 ms-md-4 m-sm-auto">
+              <router-link :to="`/product/${product.id}`" class="card-product-link">
+              <img :src="product.imageUrl" class="card-product-img" />
+              </router-link>
+              <div class="card-body">
+                <span class="badge rounded-pill bg-primary mb-2">{{product.category}}</span>
+                <h5 class="card-title fs-md-2 fs-6 fw-bold">{{ product.title }}</h5>
+                <p class="card-text">NT$ {{ product.price }}</p>
+                <a class="btn btn-primary d-flex justify-content-center text-white"
+                  @click.prevent="addCart(product.id)"><i class="bi bi-cart-plus-fill  me-2"></i>加入購物車</a>
+              </div>
             </div>
-          </div>
+              </div>
             </div>
-          </div>
+            </div>
             <PaginationComponent
             :pages="pages"
             @change-pages="getProduct"

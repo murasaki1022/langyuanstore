@@ -131,47 +131,55 @@
           <img
             class="rounded-pill"
             src="https://images.unsplash.com/photo-1562248852-58987553bd46?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            style="width: 18rem"
+            style="width: 18rem;  height:12rem;"
             alt=""
           />
           <p class="fs-4 fw-bold mt-3">扭扭</p>
-          <p class="fs-5">挑嘴貓無膠主食罐</p>
+          <a href="https://murasaki1022.github.io/langyuanstore/#/product/-Nocs9XwxWKcWd2509R2" class=""><p class="fs-5">貓咪優格口味食物罐</p></a>
           <p class="mx-5">
             自從在寵物展買過汪喵挑嘴罐後，扭扭一試成主顧，終於！終結了媽媽找不到適合又安心的罐罐噩夢！
           </p>
         </div>
         <div class="col-md-3 col-lg-3 text-center mx-3 mt-2">
           <img
-            class="rounded-pill"
+            class="rounded-pill object-fit-cover"
             src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            style="width: 18rem"
+            style="width: 18rem; height:12rem"
             alt=""
           />
           <p class="fs-4 fw-bold mt-3">來福</p>
-          <p class="fs-5">95% 鮮肉無膠主食罐</p>
+          <a href="https://murasaki1022.github.io/langyuanstore/#/product/-NoggO8PuQ1DN26XXEiK" class=""><p class="fs-5">高纖維健脾狗狗主食</p></a>
           <p class="mx-5">
             來福食量大很難全濕食，但又怕營養不夠，所以偶爾會在來福的飼料裡面拌汪喵罐罐，營養均衡，長得更帥了！
           </p>
         </div>
         <div class="col-md-3 col-lg-3 text-center mx-3 mt-2">
           <img
-            class="rounded-pill"
+            class="rounded-pill object-fit-cover"
             src="https://images.unsplash.com/photo-1580238169544-86bf7cd8c84c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            style="width: 18rem"
+            style="width: 18rem;  height:12rem;"
             alt=""
           />
           <p class="fs-4 fw-bold mt-3">麻糬</p>
-          <p class="fs-5">冷凍乾燥生食餐</p>
+          <a href="https://murasaki1022.github.io/langyuanstore/#/product/-NobcCf1piWEGGXXZ5Di" class=""><p class="fs-5">貓咪天然野味主食</p></a>
           <p class="mx-5">
             為了讓麻糬轉吃生食而先選擇凍乾，結果嗜口性超好，不攝取澱粉飼料後，麻糬體態變得精實、大便比較不臭也不再容易軟便！
           </p>
         </div>
       </div>
     </div>
+
   </div>
-  <button type="button" class="fixed fs-1 btn btn-outline-primary" @click="BackToTop">
-  <i class="bi bi-arrow-up-square-fill"></i>
-  </button>
+<div class="container">
+<div class="row">
+<div class="col">
+        <button type="button" class="fixed btn " style="z-index: 100;" @click="BackToTop">
+        <img src="@/assets/backtotop_1.png" alt="" style="height: 3rem;">
+        </button>
+</div>
+</div>
+</div>
+
 </template>
 
 <script>
@@ -267,4 +275,8 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+a{
+  text-decoration: none;
+}
+</style>

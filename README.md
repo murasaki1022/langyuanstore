@@ -1,58 +1,14 @@
-# 六角學院 Vue 樣板
+<h1>浪元小賣店</h1>
 
-> 這是六角學院的 Vue 樣板，是基於 Vite 所建立的專案。
+專案說明
+Demo Website
+前台首頁
 
-Node.js 版本建議為：18.17.1 以上
+## 浪元小賣店組員
+- 欣霓
+- 風羽
 
-## 安裝與使用
-
-以下將會引導你如何安裝此專案到你的電腦上。
-
-### 取得專案
-
-```bash
-git clone https://github.com/hexschool/vite-template.git
-```
-
-### 移動到專案資料夾
-
-```bash
-cd vite-template
-```
-
-## 環境變數
-
-請將 `.env.example` 複製一份並命名為 `.env`，並將裡面的環境變數設定為你的值。
-
-```bash
-cp .env.example .env
-```
-
-### 安裝套件
-
-```bash
-npm install
-```
-
-### 啟動開發環境
-
-```bash
-npm run dev
-```
-
-### 打包專案
-
-```bash
-npm run build
-```
-
-### 部署專案
-
-```bash
-npm run deploy
-```
-
-## 套件
+## 使用套件
 
 以下是已經安裝在專案中的套件。
 
@@ -75,6 +31,9 @@ npm run deploy
 - sass (^1.69.7)
 - vite (^5.0.10)
 - vite-plugin-eslint (^1.8.1)
+- Sweet Alert 2
+- Swiper
+- AOS (Amimate on Scroll Library)
 
 ## 資料夾結構
 
@@ -109,6 +68,3 @@ npm run deploy
 
 （請記得將 `.env` 中的 `REPOSITORY_NAME` 改為你的專案名稱即可。）
 
-## 組員
-- 欣霓
-- 風羽

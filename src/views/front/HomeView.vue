@@ -169,6 +169,9 @@
       </div>
     </div>
   </div>
+  <button type="button" class="fixed fs-1 btn btn-outline-primary" @click="BackToTop">
+  <i class="bi bi-arrow-up-square-fill"></i>
+  </button>
 </template>
 
 <script>
@@ -237,6 +240,12 @@ export default {
         .catch((err) => {
           console.log(err.response.data.message)
         })
+    },
+    BackToTop () {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
     }
   },
   components: {

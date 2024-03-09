@@ -1,8 +1,9 @@
 <h1>浪元小賣店</h1>
 
-專案說明
-Demo Website
-前台首頁
+專案說明<br>
+Demo Website<br>
+<a href="https://murasaki1022.github.io/langyuanstore/">前台首頁</a>
+<a href="https://murasaki1022.github.io/langyuanstore/#/login">後台登入</a>
 
 ## 浪元小賣店組員
 - 欣霓

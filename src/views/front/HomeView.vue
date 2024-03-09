@@ -44,7 +44,7 @@
       </div>
     </div>
   <div class="container">
-    <div class="d-flex justify-content-center mb-5 mt-5">
+    <div class="d-flex justify-content-center mb-5 mt-5" data-aos="fade-up" data-aos-duration="1000">
       <img
         class="img-fluid"
         style="width: 90%; height:auto;"
@@ -57,6 +57,8 @@
       <div class="row  d-flex justify-content-around">
         <div class="col">
           <img
+            data-aos="zoom-in-right"
+            data-aos-duration="1000"
             class="img-fluid rounded card-product-img"
             style="width: auto; height:80%;"
             src="https://storage.googleapis.com/vue-course-api.appspot.com/langyuanstore/1709759477846.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=O75aBurFDP%2BJc%2FIbmZ%2FPgWgeeatBQb%2FzTwcY%2FcGr06K8Z8AI%2BDA15lETCBZSUXz%2FEo3DwgdiiBlfFmnsL1Q4Dj0uLFBMU0v1Ss8cGlGi8wuxJdnk6jDPl9DWDtIrpbZJIOPZt4nU4edIB1ZJ1k4T2tMlYk3GjXj8fIOS8zDh3iHNlEdEBUY9c5S1fNfvbkgjG9kPqJrB3rZ4T%2BN9LYCqv5xCD36hkxEt1UHg%2FddaTrKAffUNXcmFBKOkEA%2BMVYPkH5o1j0Z9ZhFVL%2FiobPb5Tjn8VHreTTwJBEQYdcnH%2Fp202Ag8MWUrMleu6fIUa3Bq3cVfwoKiCDXUW1CNLqA1AQ%3D%3D"
@@ -66,6 +68,8 @@
         <div class="col">
         <router-link :to="`/products`">
             <img
+              data-aos="zoom-in-left"
+              data-aos-duration="1000"
               class="img-fluid rounded card-product-img"
               style="width: auto; height:80%"
               src="https://storage.googleapis.com/vue-course-api.appspot.com/langyuanstore/1709758075985.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=WWF3ZdHMzarwyY2IeCpNwAl3B%2FSQjq7wblEZizzo1sJXnFux2TZIK2wIteBrJb8mjkRmoZa1ouNTnm2rfiLCbdZWbq36ZuQnDVXOu0pwiSdUbuWyapKigw875eN10XDLYiptwUv%2BhV1X%2Bc%2B9GsFvdI5CzL1Xl0CXmg%2FQHP1ICIHwmXTdeJUFG9tld%2BUfHJOqb%2F3Jmk1bHWcdE3Fvn3JpQjPS1FR9x13UVmMHDRbJ%2By1Ql9AxjFMY4vag9CVORcJyAme851hnB6n3NtVVt6hsB4omouCMhB3zAd%2B25JZZcsurovQOA%2B1LyRwahAK08eqXh3OI%2BDlsv0b95aaVL0xm%2FA%3D%3D"
@@ -118,44 +122,47 @@
   </swiper>
   </div>
   <div class="bg-secondary3 pb-5">
-    <div class="d-flex justify-content-center fs-2 fw-bold mt-5 pt-5">
+    <div class="d-flex justify-content-center fs-2 fw-bold mt-5 pt-5" data-aos="fade-down" data-aos-duration="1500">
       好評推薦
     </div>
-    <div class="row-cols-2 d-flex justify-content-center mt-5">
-      <div class="row">
-        <div class="col">
+    <div class="my-0 my-md-5" data-aos="fade-down" data-aos-duration="1500">
+      <div class="row justify-content-center container-fluid">
+        <div class="col-md-3 col-lg-3 text-center mx-3 mt-2">
           <img
+            class="rounded-pill"
             src="https://images.unsplash.com/photo-1562248852-58987553bd46?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            style="width: 14rem"
+            style="width: 18rem"
             alt=""
           />
-          <p class="fs-4 fw-bold">扭扭</p>
-          <p>挑嘴貓無膠主食罐</p>
-          <p>
+          <p class="fs-4 fw-bold mt-3">扭扭</p>
+          <p class="fs-5">挑嘴貓無膠主食罐</p>
+          <p class="mx-5">
             自從在寵物展買過汪喵挑嘴罐後，扭扭一試成主顧，終於！終結了媽媽找不到適合又安心的罐罐噩夢！
           </p>
         </div>
-        <div class="col">
+        <div class="col-md-3 col-lg-3 text-center mx-3 mt-2">
           <img
-            src="https://images.unsplash.com/photo-1616044543567-a31e09b178ee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            style="width: 14rem"
+            class="rounded-pill"
+            src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            style="width: 18rem"
             alt=""
           />
-          <p class="fs-4 fw-bold">來福</p>
-          <p>95% 鮮肉無膠主食罐</p>
-          <p>
+          <p class="fs-4 fw-bold mt-3">來福</p>
+          <p class="fs-5">95% 鮮肉無膠主食罐</p>
+          <p class="mx-5">
             來福食量大很難全濕食，但又怕營養不夠，所以偶爾會在來福的飼料裡面拌汪喵罐罐，營養均衡，長得更帥了！
           </p>
         </div>
-        <div class="col">
+        <div class="col-md-3 col-lg-3 text-center mx-3 mt-2">
           <img
+            class="rounded-pill"
             src="https://images.unsplash.com/photo-1580238169544-86bf7cd8c84c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            style="width: 14rem"
+            style="width: 18rem"
             alt=""
           />
-          <p class="fs-4 fw-bold">麻糬</p>
-          <p>冷凍乾燥生食餐</p>
-          <p>
+          <p class="fs-4 fw-bold mt-3">麻糬</p>
+          <p class="fs-5">冷凍乾燥生食餐</p>
+          <p class="mx-5">
             為了讓麻糬轉吃生食而先選擇凍乾，結果嗜口性超好，不攝取澱粉飼料後，麻糬體態變得精實、大便比較不臭也不再容易軟便！
           </p>
         </div>
@@ -173,6 +180,10 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
+// AOS
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules'
 
@@ -180,6 +191,9 @@ import axios from 'axios'
 import cartStore from '@/stores/cartStore'
 import { mapActions, mapState } from 'pinia'
 import LangyuanLoading from '../../components/LangyuanLoading.vue'
+
+AOS.init()
+
 const { VITE_APP_API_URL, VITE_APP_API_NAME } = import.meta.env
 
 export default {

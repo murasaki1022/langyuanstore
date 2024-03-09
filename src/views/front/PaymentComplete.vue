@@ -11,8 +11,9 @@
           </div>
         </div>
       </div>
-      <div class="w-md-50 w-50 position-absolute opacity-1" style="z-index: -1; min-height: 100vh; right: 0; background-image: url(https://images.unsplash.com/photo-1563460716037-460a3ad24ba9?q=80&w=1080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-      background-position: center;">
+      <div class="w-md-80 w-50 position-absolute opacity-1" style="z-index: -1; min-height: 100vh; right: 0; background-size: cover;
+        background-position: center;
+        background-image: url(https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?q=80&w=1280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
       </div>
     </div>
 </template>

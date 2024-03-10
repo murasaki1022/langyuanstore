@@ -57,7 +57,7 @@
       <div class="row  d-flex justify-content-around">
         <div class="col">
           <img
-            data-aos="zoom-in-right"
+            data-aos="fade-up"
             data-aos-duration="1000"
             class="img-fluid rounded card-product-img"
             style="width: auto; height:80%;"
@@ -68,7 +68,7 @@
         <div class="col">
         <router-link :to="`/products`">
             <img
-              data-aos="zoom-in-left"
+              data-aos="fade-up"
               data-aos-duration="1000"
               class="img-fluid rounded card-product-img"
               style="width: auto; height:80%"
@@ -127,11 +127,11 @@
     </div>
     <div class="my-0 my-md-5" data-aos="fade-down" data-aos-duration="1500">
       <div class="row justify-content-center container-fluid">
-        <div class="col-md-3 col-lg-3 text-center mx-3 mt-2">
+        <div class="col-md-6 col-lg-3 text-center mx-3 mt-2">
           <img
-            class="rounded-pill"
+            class="rounded-pill object-fit-cover image-fluid"
             src="https://images.unsplash.com/photo-1562248852-58987553bd46?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            style="width: 18rem;  height:12rem;"
+            style="width: 18rem; height:12rem;"
             alt=""
           />
           <p class="fs-4 fw-bold img-fluid mt-3">扭扭</p>
@@ -140,22 +140,22 @@
             自從在寵物展買過汪喵挑嘴罐後，扭扭一試成主顧，終於！終結了媽媽找不到適合又安心的罐罐噩夢！
           </p>
         </div>
-        <div class="col-md-3 col-lg-3 text-center mx-3 mt-2">
+        <div class="col-md-6 col-lg-3 text-center mx-3 mt-2">
           <img
-            class="rounded-pill object-fit-cover img-fluid"
+            class="rounded-pill object-fit-cover image-fluid"
             src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             style="width: 18rem; height:12rem"
             alt=""
           />
-          <p class="fs-4 fw-bold mt-3">來福</p>
+          <p class="fs-4 fw-bold mt-4">來福</p>
           <a href="https://murasaki1022.github.io/langyuanstore/#/product/-NoggO8PuQ1DN26XXEiK" class=""><p class="fs-5">高纖維健脾狗狗主食</p></a>
           <p class="mx-5">
             來福食量大很難全濕食，但又怕營養不夠，所以偶爾會在來福的飼料裡面拌汪喵罐罐，營養均衡，長得更帥了！
           </p>
         </div>
-        <div class="col-md-3 col-lg-3 text-center mx-3 mt-2">
+        <div class="col-md-6 col-lg-3 text-center mx-3 mt-2">
           <img
-            class="rounded-pill object-fit-cover img-fluid"
+            class="rounded-pill object-fit-cover image-fluid"
             src="https://images.unsplash.com/photo-1580238169544-86bf7cd8c84c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             style="width: 18rem;  height:12rem;"
             alt=""

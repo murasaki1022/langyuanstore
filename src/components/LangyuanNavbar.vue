@@ -13,7 +13,7 @@
         </div>
         <!-- nav -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent" style="width: 100vw;">
-            <ul class="navbar-nav me-auto mb-lg-0 cursor-pointer d-flex justify-content-center">
+            <ul class="navbar-nav me-auto mb-lg-0 cursor-pointer d-flex justify-content-center align-items-center">
             <li class="nav-item mx-1">
               <router-link class="nav-link fw-bold fs-6 text-change" to="/">
                 <i class="bi bi-house-door-fill me-1"></i>回到首頁</router-link>
@@ -26,10 +26,10 @@
               <router-link class="nav-link fw-bold fs-6 text-change" to="/q&a">
                 <i class="bi bi-journal-check me-1"></i>常見問題</router-link>
             </li>
-            <li class="nav-item mx-1">
+       <!-- <li class="nav-item mx-1">
               <router-link class="nav-link fw-bold fs-6 text-change" to="/search-order">
                 <i class="bi bi-search me-1"></i>訂單查詢</router-link>
-            </li>
+            </li>-->
           </ul>
         <!-- icon按鈕 -->
           <div class="d-flex justify-content-center align-items-center me-2">

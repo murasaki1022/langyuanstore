@@ -1,11 +1,14 @@
 # 浪元小賣店
 
-![Untitled](%E6%B5%AA%E5%85%83%E5%B0%8F%E8%B3%A3%E5%BA%97%208350ba589e6647c4bd566ababce38c38/Untitled.png)
+![Untitled](https://i.imgur.com/mjctj2K.png)
 
 ## **專案說明**
 
-> Demo Website : [https://murasaki1022.github.io/langyuanstore/#/](https://murasaki1022.github.io/langyuanstore/#/)
-> 
+> Demo Website :
+> - 前台
+> [https://murasaki1022.github.io/langyuanstore/#/](https://murasaki1022.github.io/langyuanstore/#/)
+> - 後台
+> [https://murasaki1022.github.io/langyuanstore/#/login](https://murasaki1022.github.io/langyuanstore/#/login)
 
 連動前一次專案的[浪浪認養平台主題](https://github.com/tvxq5206/langyuan)，建立一個專屬貓狗的寵物用品電商網站。
 
@@ -13,7 +16,6 @@
 
 - [欣霓](https://github.com/tvxq5206)
 - [風羽](https://github.com/murasaki1022)
-
 ---
 
 ### **使用技術**
@@ -36,6 +38,7 @@
 - `Bootstrap 5`
 - `Swiper`
 - `SweetAlert2`
+- `Aos`
 
 ## **前台簡介**
 
@@ -45,11 +48,11 @@
 
 ### 商品頁面
 
-![Untitled](%E6%B5%AA%E5%85%83%E5%B0%8F%E8%B3%A3%E5%BA%97%208350ba589e6647c4bd566ababce38c38/Untitled%202.png)
+![Untitled](https://i.imgur.com/o5vPoC3.png)
 
 ### **商品詳細頁面**
 
-![Untitled](%E6%B5%AA%E5%85%83%E5%B0%8F%E8%B3%A3%E5%BA%97%208350ba589e6647c4bd566ababce38c38/Untitled%203.png)
+![Untitled](https://i.imgur.com/iKfcr3s.png)
 
 ### **搜尋 與 篩選功能**
 
@@ -63,10 +66,15 @@
 
 ### **購物車結帳**
 
-![Untitled](https://i.imgur.com/KzEO1EV.gif)
+- 將商品加入購物車
+![Untitled](https://i.imgur.com/21v4NNL.gif)
+
+- 填寫訂購人資料並結帳
+![Untitled](https://i.imgur.com/21v4NNL.gif)
 
 ### **後臺簡介**
 
 ![Untitled](https://i.imgur.com/U6AVoo5.gif)
+
 
 ###

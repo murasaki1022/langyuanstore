@@ -74,6 +74,10 @@
 
 ### **後臺簡介**
 
-![Untitled](https://i.imgur.com/4hxKUJ3.gif)
+- 登入後至訂單頁面
+![Untitled](https://i.imgur.com/PPQ1oVr.gif)
+
+- 產品頁面介紹後登出
+![Untitled](https://i.imgur.com/MVDCJA8.gif)
 
 ###

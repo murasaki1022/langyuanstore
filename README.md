@@ -70,11 +70,10 @@
 ![Untitled](https://i.imgur.com/21v4NNL.gif)
 
 - 填寫訂購人資料並結帳
-![Untitled](https://i.imgur.com/21v4NNL.gif)
+![Untitled](https://i.imgur.com/cM8d0bP.gif)
 
 ### **後臺簡介**
 
-![Untitled](https://i.imgur.com/U6AVoo5.gif)
-
+![Untitled](https://i.imgur.com/4hxKUJ3.gif)
 
 ###

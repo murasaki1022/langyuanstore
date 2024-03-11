@@ -1,71 +1,72 @@
-<h1>浪元小賣店</h1>
+# 浪元小賣店
 
-專案說明<br>
-Demo Website<br>
-<a href="https://murasaki1022.github.io/langyuanstore/">前台首頁</a>
-<a href="https://murasaki1022.github.io/langyuanstore/#/login">後台登入</a>
+![Untitled](%E6%B5%AA%E5%85%83%E5%B0%8F%E8%B3%A3%E5%BA%97%208350ba589e6647c4bd566ababce38c38/Untitled.png)
 
-## 浪元小賣店組員
-- 欣霓
-- 風羽
+## **專案說明**
 
-## 使用套件
+> Demo Website : [https://murasaki1022.github.io/langyuanstore/#/](https://murasaki1022.github.io/langyuanstore/#/)
+> 
 
-以下是已經安裝在專案中的套件。
+連動前一次專案的[浪浪認養平台主題](https://github.com/tvxq5206/langyuan)，建立一個專屬貓狗的寵物用品電商網站。
 
-- axios (^1.6.5)
-- bootstrap (^5.3.2)
-- bootstrap-icons (^1.11.3)
-- dotenv (^16.3.1)
-- pinia (^2.1.7)
-- vue (^3.3.11)
-- vue-router (^4.2.5)
-- @vitejs/plugin-vue (^4.5.2)
-- eslint (^8.49.0)
-- eslint-config-standard (^^17.1.0)
-- eslint-import-resolver-alias (^1.1.2)
-- eslint-plugin-import (^2.29.1)
-- eslint-plugin-n (^16.6.2)
-- eslint-plugin-promise (^6.1.1)
-- eslint-plugin-vue (^9.20.1)
-- gh-pages (^6.1.1)
-- sass (^1.69.7)
-- vite (^5.0.10)
-- vite-plugin-eslint (^1.8.1)
-- Sweet Alert 2
-- Swiper
-- AOS (Amimate on Scroll Library)
+### 專案成員
 
-## 資料夾結構
+- [欣霓](https://github.com/tvxq5206)
+- [風羽](https://github.com/murasaki1022)
 
-- `.vscode`：Visual Studio Code 的設定檔
-- `dist`：打包後的檔案
-- `public`：公開的靜態檔案
-- `src`：專案的程式碼
-  - `assets`：靜態檔案
-  - `components`：元件
-  - `router`：路由
-  - `store`：狀態管理
-  - `views`：頁面
-  - `App.vue`：根元件
-  - `main.js`：進入點
-- `.env.example`：環境變數範本
-- `.eslintrc.js`：ESLint 設定檔
-- `.gitignore`：Git 忽略檔案
-- `.nvmrc`：Node.js 版本
-- `index.html`：進入點 HTML
-- `package-lock.json`：套件版本鎖定
-- `package.json`：專案資訊
-- `README.md`：專案說明
-- `vite.config.js`：Vite 設定檔
+---
 
-## gh-pages 部署說明
+### **使用技術**
 
-內建預設是使用 gh-pages 進行部署，因此只需要在專案根目錄下執行以下指令即可。
+- 以 `Vue 3` 與 `create-vue`架設開發。
+- 使用 `Bootstrap 5` 作為 CSS 框架切版。
+- 使用 `ESLint standard` 統一程式碼結構。
+- 使用 `Pinia.js` 傳遞跨元件資料，作為狀態管理工具。
+- 使用 `Axios` 串接API。
 
-```bash
-npm run deploy
-```
+### **使用套件**
 
-（請記得將 `.env` 中的 `REPOSITORY_NAME` 改為你的專案名稱即可。）
+- `Vue 3`
+- `Create-vue`
+- `Vue Router`
+- `Axios`
+- `Vue-loading-overlay`
+- `Vee Validation`
+- `Pinia`
+- `Bootstrap 5`
+- `Swiper`
+- `SweetAlert2`
 
+## **前台簡介**
+
+### **首頁**
+
+![Untitled](https://i.imgur.com/Q6psoPq.png)
+
+### 商品頁面
+
+![Untitled](%E6%B5%AA%E5%85%83%E5%B0%8F%E8%B3%A3%E5%BA%97%208350ba589e6647c4bd566ababce38c38/Untitled%202.png)
+
+### **商品詳細頁面**
+
+![Untitled](%E6%B5%AA%E5%85%83%E5%B0%8F%E8%B3%A3%E5%BA%97%208350ba589e6647c4bd566ababce38c38/Untitled%203.png)
+
+### **搜尋 與 篩選功能**
+
+- 搜尋
+
+![Untitled](https://i.imgur.com/nb9isK0.gif)
+
+- 篩選
+
+![Untitled](https://i.imgur.com/AlCHUmK.gif)
+
+### **購物車結帳**
+
+![Untitled](https://i.imgur.com/KzEO1EV.gif)
+
+### **後臺簡介**
+
+![Untitled](https://i.imgur.com/U6AVoo5.gif)
+
+###

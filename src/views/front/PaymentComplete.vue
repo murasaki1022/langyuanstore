@@ -6,7 +6,7 @@
             <div class="my-auto">
               <h2 class="">付款完成</h2>
               <h4 class="">感謝您的購買<i class="bi bi-balloon-heart text-danger fs-4"></i></h4>
-              <router-link to="/"><button type="button" class="btn btn-primary mt-4 px-5">回到首頁</button></router-link>
+              <RouterLink to="/"><button type="button" class="btn btn-primary mt-4 px-5">回到首頁</button></RouterLink>
             </div>
           </div>
         </div>

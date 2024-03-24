@@ -43,9 +43,9 @@
             <div class="row m-auto">
             <div class="col-xl-4 col-lg-5  col-md-6 col-sm product-list m-auto" v-for="product in products" :key="product.id">
             <div class="card product-card mb-sm-4 ms-md-4 m-sm-auto">
-              <router-link :to="`/product/${product.id}`" class="card-product-link">
-              <img :src="product.imageUrl" class="card-product-img" />
-              </router-link>
+              <RouterLink :to="`/product/${product.id}`" class="card-product-link">
+              <img :src="product.imageUrl" class="card-product-img" alt="商品圖片" />
+              </RouterLink>
               <div class="card-body">
                 <span class="badge rounded-pill bg-primary mb-2">{{ product.category }}</span>
                 <h5 class="card-title fs-md-2 fs-6 fw-bold">{{ product.title }}</h5>
@@ -72,8 +72,8 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 import cartStore from '@/stores/cartStore'
 import { mapActions, mapState } from 'pinia'
-import LangyuanLoading from '../../components/LangyuanLoading.vue'
-import PaginationComponent from '../../components/PaginationComponent.vue'
+import LangyuanLoading from '@/components/LangyuanLoading.vue'
+import PaginationComponent from '@/components/PaginationComponent.vue'
 const { VITE_APP_API_URL, VITE_APP_API_NAME } = import.meta.env
 
 export default {
@@ -105,12 +105,8 @@ export default {
           this.products = this.products.filter(item => item.title.trim().toLowerCase().includes(this.search.toLowerCase()))
         })
         .catch((err) => {
-          console.log(err.data.message)
+          alert(err.data.message)
         })
-    },
-    openModal (product) {
-      this.tempProduct = product
-      this.$refs.userModal.open()
     },
     // eslint-disable-next-line camelcase
     addCart (product_id, qty = 1) {
@@ -126,10 +122,9 @@ export default {
         .then((res) => {
           this.status.addCartLoading = ''
           Swal.fire(res.data.message)
-          this.$refs.userModal.close()
         })
         .catch((err) => {
-          console.log(err)
+          alert(err)
         })
     },
     ...mapActions(cartStore, ['addCart', 'getCart']),
@@ -146,7 +141,7 @@ export default {
           this.getCart()
         })
         .catch((err) => {
-          console.log(err.response.data.message)
+          alert(err.response.data.message)
         })
     }
   },

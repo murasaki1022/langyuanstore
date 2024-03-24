@@ -49,3 +49,9 @@ export default {
   }
 }
 </script>
+
+<style scope>
+.page-link {
+  cursor: pointer;
+}
+</style>

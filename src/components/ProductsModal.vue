@@ -33,7 +33,7 @@ aria-hidden="true"
                 class="form-control mb-2"
                 placeholder="請輸入圖片連結"
               />
-              <img class="img-fluid" :src="editProduct.imageUrl" />
+              <img class="img-fluid" :src="editProduct.imageUrl" alt="主圖" />
             </div>
             <h3>上傳圖片</h3>
             <form action="/api/thisismycourse2/admin/upload"
@@ -69,7 +69,7 @@ aria-hidden="true"
                     placeholder="請輸入圖片連結"
                   />
                 </div>
-                <img class="img-fluid" :src="image" />
+                <img class="img-fluid" :src="image" alt="多圖"/>
               </div>
               <div
                 v-if="!editProduct.imagesUrl.length || editProduct.imagesUrl[editProduct.imagesUrl.length - 1]"
@@ -249,7 +249,7 @@ export default {
           fileInput.value = null
         })
         .catch((err) => {
-          console.log(err)
+          alert(err.message)
         })
     },
     copyUrl () {
@@ -261,7 +261,7 @@ export default {
           this.newImageUrl = ''
         })
         .catch(err => {
-          console.error('複製失敗', err)
+          alert('複製失敗', err)
         })
     }
   },

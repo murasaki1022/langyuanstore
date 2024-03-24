@@ -16,14 +16,14 @@
           ><img
             style="width: 100%"
             src="https://storage.googleapis.com/vue-course-api.appspot.com/langyuanstore/1709761717400.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=lIA0tvVWHKM5MjS8MJFe3sgoJTpcrnMvAps8qSZ1Nm40VTfNZNJt%2FJTGIr%2FLYVH3T2CvV9u7kmXngDRt9zC0uH7go%2FqfzhiyBZNwbI9auk4G0bDPNmR96Jxp8n8rkM2ioGmcUTC20p0YNrK3o6kt8uwFbKNLo0ntamDEJbyvu64tG%2F5bNLMTxIH%2FopTmPgxv%2F0cd6rvXMTs9ihMn9r3ppQ4yLQs6ERCsiNY4O%2FzBSEcsPprxU4KYCRuU4WE1qKsuqZG1Xr46v6xYXNb%2BAHchhDSel52h3b%2FGe1MAdWoGHO0IijfhO0uPseCtyggcceIvEJLHCuxJJMxVmfTV0C5N7A%3D%3D"
-            alt=""
+            alt="全館免運優惠進行中"
         />
         </swiper-slide>
         <swiper-slide
           ><img
             style="width: 100%"
             src="https://storage.googleapis.com/vue-course-api.appspot.com/langyuanstore/1709842871677.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=mpdhmaoSoSCsOQLZoIutXyvg45CTO2UgaVlw4x7mIYgdRsSGulYd1twnaL5RHNAi2BsQAqBYL9My3qPf7iYTbHukbeAcnmFzl7N%2FxhsjRQtT5kY62DxV12qiA0xDJW5Z%2F7wOGptE8EhMDql2MrsVkMHgygCtBoO15QpntB0bttdE%2BqKb5aR1eLtBF6N3WawbFJmHlzE%2BeKBg0ynxptQ98ykBFXnxAIteW0Xzcrfxz%2Fkc1V%2F1l1cB4SmCxYQHleSfFodMGA2xq4bXcLTgUhpo5g7lX73KHCgI95RaOc5fL6U25Ye0frLx9U6jNJ0385XD229mWn21dkNWEDmXE1LMnA%3D%3D"
-            alt=""
+            alt="輸入折扣碼【lovelangyuan】享有8折優惠"
         /></swiper-slide>
       </swiper>
     </div>
@@ -31,9 +31,9 @@
     <div class="bg-secondary3 mt-5 pt-5 pb-5">
       <div class="container">
       <h3 class="d-flex justify-content-center fw-bold pt-2">關於浪元
-      <img src="@/assets/langyuanstorelogo.svg" class="img-fluid ms-3" style="height: 32px;" alt="">
+      <img src="@/assets/langyuanstorelogo.svg" class="img-fluid ms-3" style="height: 32px;" alt="浪元logo">
       <span class="text-secondary2 mx-2">x</span>
-      <img src="@/assets/langyuanlogo.svg" class="img-fluid" style="height: 32px;" alt=""></h3>
+      <img src="@/assets/langyuanlogo.svg" class="img-fluid" style="height: 32px;" alt="浪圓logo"></h3>
       <hr>
       <p class="d-flex justify-content-center pt-2">
         「浪元小賣店」與浪圓寵物領養平台攜手，專營高品質寵物用品。每筆盈餘致力支持浪圓的救援使命，為更多毛小孩尋找安心家庭。
@@ -49,7 +49,7 @@
         class="img-fluid"
         style="width: 90%; height:auto;"
         src="https://storage.googleapis.com/vue-course-api.appspot.com/langyuanstore/1709839733636.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=Sxfa6dnAowTOi%2FV2vEuOvs6ssVnLneb1nT2ABHXluC0XJmepNI1YImS4H55x004o%2FFdtqOkPPZjmSZ9euf%2BkBwVNtocfMxTNIJ7Qmwpg3%2BG3K8yd8Pas43rW4SjzR2GqwBfq1fAalQhzE1Wm%2BJWADVCRkq5RwKzfC9mLyI0DL3df49D7re%2FwDC%2BKr4Zv24eUJFI2FKedK2qgr72agltHCkUlwgveNKXyJWm1txXbZOTW2wwLXAPKNJE0uxsBDQUu2STBuuylQvJUyOnnwy8TokzD4fywjmJJJS1JU3W5a7ibTOQSaSVNyAMHXx0YbstJ5quQATfT9u5qrMDCKDBmYQ%3D%3D"
-        alt=""
+        alt="165防詐騙提醒"
       />
     </div>
     </div>
@@ -62,20 +62,20 @@
             class="img-fluid rounded card-product-img"
             style="width: auto; height:80%;"
             src="https://storage.googleapis.com/vue-course-api.appspot.com/langyuanstore/1709759477846.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=O75aBurFDP%2BJc%2FIbmZ%2FPgWgeeatBQb%2FzTwcY%2FcGr06K8Z8AI%2BDA15lETCBZSUXz%2FEo3DwgdiiBlfFmnsL1Q4Dj0uLFBMU0v1Ss8cGlGi8wuxJdnk6jDPl9DWDtIrpbZJIOPZt4nU4edIB1ZJ1k4T2tMlYk3GjXj8fIOS8zDh3iHNlEdEBUY9c5S1fNfvbkgjG9kPqJrB3rZ4T%2BN9LYCqv5xCD36hkxEt1UHg%2FddaTrKAffUNXcmFBKOkEA%2BMVYPkH5o1j0Z9ZhFVL%2FiobPb5Tjn8VHreTTwJBEQYdcnH%2Fp202Ag8MWUrMleu6fIUa3Bq3cVfwoKiCDXUW1CNLqA1AQ%3D%3D"
-            alt=""
+            alt="最新消息"
           />
         </div>
         <div class="col">
-        <router-link :to="`/products`">
+        <RouterLink :to="`/products`">
             <img
               data-aos="fade-up"
               data-aos-duration="1000"
               class="img-fluid rounded card-product-img"
               style="width: auto; height:80%"
               src="https://storage.googleapis.com/vue-course-api.appspot.com/langyuanstore/1709758075985.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=WWF3ZdHMzarwyY2IeCpNwAl3B%2FSQjq7wblEZizzo1sJXnFux2TZIK2wIteBrJb8mjkRmoZa1ouNTnm2rfiLCbdZWbq36ZuQnDVXOu0pwiSdUbuWyapKigw875eN10XDLYiptwUv%2BhV1X%2Bc%2B9GsFvdI5CzL1Xl0CXmg%2FQHP1ICIHwmXTdeJUFG9tld%2BUfHJOqb%2F3Jmk1bHWcdE3Fvn3JpQjPS1FR9x13UVmMHDRbJ%2By1Ql9AxjFMY4vag9CVORcJyAme851hnB6n3NtVVt6hsB4omouCMhB3zAd%2B25JZZcsurovQOA%2B1LyRwahAK08eqXh3OI%2BDlsv0b95aaVL0xm%2FA%3D%3D"
-              alt=""
+              alt="購買主食類贈送試吃包"
             />
-        </router-link>
+        </RouterLink>
         </div>
       </div>
     </div>
@@ -105,9 +105,9 @@
       <div class="row">
           <div class="col-md-4 col-sm">
           <div class="card product-card mb-sm-4 ms-md-4 m-sm-auto">
-            <router-link :to="`/product/${product.id}`" class="card-product-link">
-            <img :src="product.imageUrl" class="card-product-img" />
-            </router-link>
+            <RouterLink :to="`/product/${product.id}`" class="card-product-link">
+            <img :src="product.imageUrl" class="card-product-img" alt="商品圖片"/>
+            </RouterLink>
             <div class="card-body">
               <span class="badge rounded-pill bg-primary mb-2">{{ product.category }}</span>
               <h5 class="card-title fs-6 fw-bold">{{ product.title }}</h5>
@@ -132,7 +132,7 @@
             class="rounded-pill object-fit-cover image-fluid"
             src="https://images.unsplash.com/photo-1562248852-58987553bd46?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             style="width: 18rem; height:12rem;"
-            alt=""
+            alt="扭扭照片"
           />
           <p class="fs-4 fw-bold img-fluid mt-3">扭扭</p>
           <a href="https://murasaki1022.github.io/langyuanstore/#/product/-Nocs9XwxWKcWd2509R2" class=""><p class="fs-5">貓咪優格口味食物罐</p></a>
@@ -145,7 +145,7 @@
             class="rounded-pill object-fit-cover image-fluid"
             src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             style="width: 18rem; height:12rem"
-            alt=""
+            alt="來福照片"
           />
           <p class="fs-4 fw-bold mt-4">來福</p>
           <a href="https://murasaki1022.github.io/langyuanstore/#/product/-NoggO8PuQ1DN26XXEiK" class=""><p class="fs-5">高纖維健脾狗狗主食</p></a>
@@ -158,7 +158,7 @@
             class="rounded-pill object-fit-cover image-fluid"
             src="https://images.unsplash.com/photo-1580238169544-86bf7cd8c84c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             style="width: 18rem;  height:12rem;"
-            alt=""
+            alt="麻糬照片"
           />
           <p class="fs-4 fw-bold mt-3">麻糬</p>
           <a href="https://murasaki1022.github.io/langyuanstore/#/product/-NobcCf1piWEGGXXZ5Di" class=""><p class="fs-5">貓咪天然野味主食</p></a>
@@ -174,7 +174,7 @@
 <div class="row">
 <div class="col">
         <button type="button" class="fixed btn " style="z-index: 100;" @click="BackToTop">
-        <img src="@/assets/backtotop_1.png" alt="" style="height: 3rem;">
+        <img src="@/assets/backtotop_1.png" alt="回到頂端" style="height: 3rem;">
         </button>
 </div>
 </div>
@@ -225,12 +225,8 @@ export default {
           this.isLoading = false
         })
         .catch((err) => {
-          console.log(err.data.message)
+          alert(err.data.message)
         })
-    },
-    openModal (product) {
-      this.tempProduct = product
-      this.$refs.userModal.open()
     },
     ...mapActions(cartStore, ['addCart', 'getCart']),
     changeCartNum (item, qty = 1) {
@@ -246,7 +242,7 @@ export default {
           this.getCart()
         })
         .catch((err) => {
-          console.log(err.response.data.message)
+          alert(err.response.data.message)
         })
     },
     BackToTop () {

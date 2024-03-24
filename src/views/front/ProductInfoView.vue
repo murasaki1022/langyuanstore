@@ -5,14 +5,14 @@
       <div class="row m-sm-auto">
         <div class="col-12 my-4">
           <div class="path">
-            <router-link to="/" style="text-decoration: none;">首頁</router-link>
+            <RouterLink to="/" style="text-decoration: none;">首頁</RouterLink>
             &gt;
-            <router-link to="/products" style="text-decoration: none;">全部商品</router-link>
+            <RouterLink to="/products" style="text-decoration: none;">全部商品</RouterLink>
             &gt; {{ productInfo.title }}
           </div>
         </div>
         <div class="col-md-6 align-items-center">
-        <img class="img-fluid" :src="productInfo.imageUrl" alt="">
+        <img class="img-fluid" :src="productInfo.imageUrl" alt="商品圖片">
         </div>
         <div class="col-md-5">
           <h2 class="fw-bold h1 mb-4">{{ productInfo.title }}</h2>
@@ -69,9 +69,9 @@
       <div class="row">
           <div class="col-md-4 col-sm">
           <div class="card product-card mb-sm-4 ms-md-4 m-sm-auto">
-            <router-link :to="`/product/${product.id}`" class="card-product-link">
-            <img :src="product.imageUrl" class="card-product-img" />
-            </router-link>
+            <RouterLink :to="`/product/${product.id}`" class="card-product-link">
+            <img :src="product.imageUrl" class="card-product-img" alt="商品圖片"/>
+            </RouterLink>
             <div class="card-body">
               <span class="badge rounded-pill bg-primary mb-2">{{ product.category }}</span>
               <h5 class="card-title fs-6 fw-bold">{{ product.title }}</h5>
@@ -103,7 +103,7 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 import cartStore from '@/stores/cartStore'
 import { mapActions, mapState } from 'pinia'
-import LangyuanLoading from '../../components/LangyuanLoading.vue'
+import LangyuanLoading from '@/components/LangyuanLoading.vue'
 import * as bootstrap from 'bootstrap'
 window.bootstrap = bootstrap
 const { VITE_APP_API_URL, VITE_APP_API_NAME } = import.meta.env
@@ -131,7 +131,7 @@ export default {
           this.isLoading = false
         })
         .catch((err) => {
-          console.log(err.data.message)
+          alert(err.data.message)
         })
     },
     getProductInfo () {
@@ -143,7 +143,7 @@ export default {
           this.isLoading = false
         })
         .catch((err) => {
-          console.log(err.data.message)
+          alert(err.data.message)
         })
     },
     // eslint-disable-next-line camelcase
@@ -162,7 +162,7 @@ export default {
           Swal.fire(res.data.message)
         })
         .catch((err) => {
-          console.log(err.response.data.message)
+          alert(err.response.data.message)
         })
     },
     ...mapActions(cartStore, ['addCart', 'getCart']),
@@ -179,7 +179,7 @@ export default {
           this.getCart()
         })
         .catch((err) => {
-          console.log(err.response.data.message)
+          alert(err.response.data.message)
         })
     }
   },

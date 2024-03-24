@@ -51,12 +51,12 @@
                   <button class="btn btn-outline-primary border-bottom border-top-0 border-start-0 border-end-0 rounded-0" type="button" id="button-addon2"><i class="bi bi-send-fill"></i></button>
                 </div>
               </div>
-              <router-link to="/products">
+              <RouterLink to="/products">
                   <button type="button" class="btn btn-outline-primary mb-5 mt-3">
                   <i class="bi bi-chevron-compact-left"></i>
                   回到商品專區
               </button>
-              </router-link>
+              </RouterLink>
             </div>
             <div class="col-md-4">
               <div class="border p-4 mb-4">
@@ -77,7 +77,7 @@
                   <p class="mb-0 h4 fw-bold">Total</p>
                   <p class="mb-0 h4 fw-bold">NT${{ final_total }}</p>
                 </div>
-                <router-link to="/order-confirmation"><button type="submit" class="btn btn-primary w-100 mt-4">輸入訂購人資訊</button></router-link>
+                <RouterLink to="/order-confirmation"><button type="submit" class="btn btn-primary w-100 mt-4">輸入訂購人資訊</button></RouterLink>
               </div>
             </div>
           </div>
@@ -118,7 +118,7 @@ export default {
           this.getCart()
         })
         .catch((err) => {
-          console.log(err.response.data.message)
+          alert(err.response.data.message)
         })
     },
     deleteCartItem (id) {
@@ -138,7 +138,7 @@ export default {
               this.getCart()
             })
             .catch((err) => {
-              console.log(err.response.data.message)
+              alert(err.response.data.message)
             })
           Swal.fire({
             title: '已刪除成功',
@@ -168,7 +168,6 @@ export default {
               })
             })
             .catch((err) => {
-              console.log(err)
               Swal.fire({
                 icon: 'error',
                 title: err.response.data.message

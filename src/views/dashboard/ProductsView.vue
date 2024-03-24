@@ -70,10 +70,10 @@
 
 <script>
 import axios from 'axios'
-import DeleteProductModal from '../../components/DeleteProductModal.vue'
-import PaginationComponent from '../../components/PaginationComponent.vue'
-import ProductsModal from '../../components/ProductsModal.vue'
-import LangyuanLoading from '../../components/LangyuanLoading.vue'
+import DeleteProductModal from '@/components/DeleteProductModal.vue'
+import PaginationComponent from '@/components/PaginationComponent.vue'
+import ProductsModal from '@/components/ProductsModal.vue'
+import LangyuanLoading from '@/components/LangyuanLoading.vue'
 const { VITE_APP_API_URL, VITE_APP_API_NAME } = import.meta.env
 
 export default {
@@ -99,7 +99,7 @@ export default {
           this.isLoading = false
         })
         .catch((error) => {
-          console.log(error)
+          alert(error)
         })
     },
     openModal (status, item) {

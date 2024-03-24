@@ -13,10 +13,10 @@
         <i class="bi bi-instagram text-white fs-1 mx-3"></i>
         <p class="text-white" style="font-size: 12px">Instagram</p>
       </a>
-      <router-link to="/login">
+      <RouterLink to="/login">
         <i class="bi bi-person-fill text-white fs-1 mx-3"></i>
         <p class="text-white" style="font-size: 12px">後台</p>
-      </router-link>
+      </RouterLink>
    </div>
   </div>
   <p class="text-center">本專題僅為學習用途・不做任何商業使用・圖片來源請見GitHub Repo</p>

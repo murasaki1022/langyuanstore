@@ -3,7 +3,7 @@
       <div class="row">
           <div class="col-auto col-sm-3 g-0"><DashboardNavbar></DashboardNavbar></div>
           <div class="col-auto col-sm-8">
-            <router-view v-if="status"></router-view>
+            <RouterView v-if="status"></RouterView>
           </div>
       </div>
     </div>
@@ -11,7 +11,7 @@
 
 <script>
 import axios from 'axios'
-import DashboardNavbar from '../../components/DashboardNavbar.vue'
+import DashboardNavbar from '@/components/DashboardNavbar.vue'
 const { VITE_APP_API_URL } = import.meta.env
 
 export default {
@@ -34,7 +34,6 @@ export default {
           this.$router.push('/admin/order')
         })
         .catch((error) => {
-          console.log(error)
           alert(error.response.data.message)
           this.$router.push('/login')
         })

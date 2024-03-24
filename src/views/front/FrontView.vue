@@ -1,12 +1,12 @@
 <template>
-    <LangyuanNavbar></LangyuanNavbar>
-    <router-view></router-view>
-    <LangyuanFooter></LangyuanFooter>
+    <LangyuanNavbar />
+    <RouterView></RouterView>
+    <LangyuanFooter />
 </template>
 
 <script>
-import LangyuanNavbar from '../../components/LangyuanNavbar.vue'
-import LangyuanFooter from '../../components/LangyuanFooter.vue'
+import LangyuanNavbar from '@/components/LangyuanNavbar.vue'
+import LangyuanFooter from '@/components/LangyuanFooter.vue'
 
 export default {
   components: {

@@ -82,10 +82,10 @@
 
 <script>
 import axios from 'axios'
-import DeleteOrderModal from '../../components/DeleteOrderModal.vue'
-import OrderModal from '../../components/OrderModal.vue'
-import PaginationComponent from '../../components/PaginationComponent.vue'
-import LangyuanLoading from '../../components/LangyuanLoading.vue'
+import DeleteOrderModal from '@/components/DeleteOrderModal.vue'
+import OrderModal from '@/components/OrderModal.vue'
+import PaginationComponent from '@/components/PaginationComponent.vue'
+import LangyuanLoading from '@/components/LangyuanLoading.vue'
 const { VITE_APP_API_URL, VITE_APP_API_NAME } = import.meta.env
 
 export default {
@@ -108,7 +108,6 @@ export default {
           this.isLoading = false
         })
         .catch((error) => {
-          console.log(error.response.data.message)
           alert(error.response.data.message)
         })
     },
@@ -133,7 +132,6 @@ export default {
           this.getOrderList()
         })
         .catch((error) => {
-          console.log(error.response.data.message)
           alert(error.response.data.message)
         })
     },

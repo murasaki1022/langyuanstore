@@ -91,16 +91,20 @@ export default {
       axios.get(`${VITE_APP_API_URL}/v2/api/${VITE_APP_API_NAME}/order/${id}`)
         .then((res) => {
           this.order = res.data.order
-          console.log(res)
           this.orderProducts = Object.keys(this.order.products).map((i) => this.order.products[i])
+        })
+        .catch((err) => {
+          alert(err.response.data.message)
         })
     },
     payOrder () {
       axios.post(`${VITE_APP_API_URL}/v2/api/${VITE_APP_API_NAME}/pay/${this.orderId}`)
         .then((res) => {
-          console.log(res)
           Swal.fire(res.data.message)
           this.$router.push('/payment-complete')
+        })
+        .catch((err) => {
+          alert(err.response.data.message)
         })
     },
     ...mapActions(cartStore, ['getCart'])

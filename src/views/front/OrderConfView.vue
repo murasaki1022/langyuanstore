@@ -126,12 +126,12 @@
               </div>
             </div>
           <div class="d-flex flex-column-reverse flex-md-row mt-4 justify-content-between align-items-md-center align-items-end w-100">
-            <router-link to="/cart">
+            <RouterLink to="/cart">
               <button type="button" class="btn btn-outline-primary btn-lg mb-5 mt-3">
                 <i class="bi bi-chevron-compact-left"></i>
                 回到購物車
             </button>
-          </router-link>
+          </RouterLink>
           <button type="submit" class="btn btn-primary btn-lg mb-5 mt-3">
                 確認付款<i class="bi bi-chevron-compact-right"></i>
           </button>
@@ -147,7 +147,7 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 import cartStore from '@/stores/cartStore'
 import { mapActions, mapState } from 'pinia'
-import LangyuanLoading from '../../components/LangyuanLoading.vue'
+import LangyuanLoading from '@/components/LangyuanLoading.vue'
 const { VITE_APP_API_URL, VITE_APP_API_NAME } = import.meta.env
 
 export default {

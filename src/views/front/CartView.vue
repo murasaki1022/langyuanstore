@@ -26,17 +26,18 @@
                     <td class="border-0 align-middle">
                       <div class="input-group input-group-sm">
                           <div class="input-group mb-3">
+                            <button type="button" class="btn btn-primary"
+                            :disabled="cart.id === status.changeCartNumLoading"
+                            @click="cart.qty--; changeCartNum(cart,cart.qty)">-</button>
                             <input
                               min="1"
                               type="number"
                               class="form-control"
-                              v-model="cart.qty"
-                              :disabled="cart.id === status.changeCartNumLoading"
-                              @change="changeCartNum(cart,cart.qty)"
+                              readonly
                             />
-                            <span class="input-group-text bg-secondary3" id="basic-addon2"
-                              >{{ cart.product.unit }}</span
-                            >
+                            <button type="button" class="btn btn-primary"
+                            :disabled="cart.id === status.changeCartNumLoading"
+                            @click="cart.qty++; changeCartNum(cart,cart.qty)">+</button>
                           </div>
                         </div>
                     </td>

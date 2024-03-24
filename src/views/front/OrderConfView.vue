@@ -1,6 +1,4 @@
 <template>
-  <LangyuanLoading v-model:active="isLoading">
-  </LangyuanLoading>
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-10">
@@ -147,7 +145,6 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 import cartStore from '@/stores/cartStore'
 import { mapActions, mapState } from 'pinia'
-import LangyuanLoading from '@/components/LangyuanLoading.vue'
 const { VITE_APP_API_URL, VITE_APP_API_NAME } = import.meta.env
 
 export default {
@@ -194,9 +191,6 @@ export default {
   },
   mounted () {
     this.getCart()
-  },
-  components: {
-    LangyuanLoading
   },
   computed: {
     ...mapState(cartStore, ['cart', 'final_total'])

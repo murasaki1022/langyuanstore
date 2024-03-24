@@ -47,8 +47,6 @@
 <script>
 import cartStore from '@/stores/cartStore'
 import { mapActions, mapState } from 'pinia'
-import * as bootstrap from 'bootstrap'
-window.bootstrap = bootstrap
 
 export default {
   computed: {

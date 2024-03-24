@@ -41,6 +41,7 @@
         <div class="col-md-9">
         <div class="container">
             <div class="row m-auto">
+            <p v-if="!this.isLoading && this.products.length === 0 && this.search.trim() !== ''" class="fs-4 text-center">搜尋不到 <span class="text-primary">{{search}}</span> 喔｡ﾟ(ﾟ´ω`ﾟ)ﾟ｡</p>
             <div class="col-xl-4 col-lg-5  col-md-6 col-sm product-list m-auto" v-for="product in products" :key="product.id">
             <div class="card product-card mb-sm-4 ms-md-4 m-sm-auto">
               <RouterLink :to="`/product/${product.id}`" class="card-product-link">
@@ -60,6 +61,7 @@
             <PaginationComponent
             :pages="pages"
             @change-pages="getProduct"
+            v-if="this.products.length !== 0"
             class="d-flex justify-content-center mb-4 mb-md-6 m-auto"
           ></PaginationComponent>
         </div>
@@ -161,6 +163,7 @@ export default {
   mounted () {
     this.getProduct()
     this.getCart()
+    console.log(this.category, this.pages, this.search)
   }
 
 }

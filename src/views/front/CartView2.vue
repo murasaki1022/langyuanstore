@@ -20,8 +20,8 @@
                       <td
                       style="width: 72px; height: 72px; background-size: cover;
                       background-position: center;"
-                      :style="{backgroundImage:`url(${cart.product.imageUrl})`}"></td>
-                      <p class="mb-0 fw-bold my-3 d-inline-block">{{cart.product.title}}</p>
+                      :style="{ backgroundImage:`url(${cart.product.imageUrl})` }"></td>
+                      <p class="mb-0 fw-bold my-3 d-inline-block">{{ cart.product.title }}</p>
                     </th>
                     <td class="border-0 align-middle">
                       <div class="input-group input-group-sm">
@@ -35,12 +35,12 @@
                               @change="changeCartNum(cart,cart.qty)"
                             />
                             <span class="input-group-text bg-secondary3" id="basic-addon2"
-                              >{{cart.product.unit}}</span
+                              >{{ cart.product.unit }}</span
                             >
                           </div>
                         </div>
                     </td>
-                    <td class="border-0 align-middle" style="max-width: 160px;"><p class="mb-0 ms-auto text-end">NT${{cart.total}}</p></td>
+                    <td class="border-0 align-middle" style="max-width: 160px;"><p class="mb-0 ms-auto text-end">NT${{ cart.total }}</p></td>
                     <td class="border-0 align-middle text-center"><i type="button" class="bi bi-trash3 text-danger fs-5" @click="deleteCartItem(cart.id)"></i></td>
                   </tr>
                 </tbody>

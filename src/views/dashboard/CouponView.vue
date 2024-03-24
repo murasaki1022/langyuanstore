@@ -19,10 +19,10 @@
           </thead>
           <tbody>
             <tr v-for="item in products" :key="item.id">
-              <td>{{}}</td>
-              <td>{{}}</td>
-              <td class="text-end">${{}}</td>
-              <td class="text-end">${{}}</td>
+              <td>{{  }}</td>
+              <td>{{  }}</td>
+              <td class="text-end">${{  }}</td>
+              <td class="text-end">${{  }}</td>
               <td>
                 <span class="text-success" v-if="item.is_enabled">啟用</span>
                 <span v-else>未啟用</span>
@@ -70,10 +70,4 @@
 
 <script>
 
-export default {
-
-}
 </script>
-
-<style scoped>
-</style>

@@ -73,7 +73,7 @@
             <img :src="product.imageUrl" class="card-product-img" />
             </router-link>
             <div class="card-body">
-              <span class="badge rounded-pill bg-primary mb-2">{{product.category}}</span>
+              <span class="badge rounded-pill bg-primary mb-2">{{ product.category }}</span>
               <h5 class="card-title fs-6 fw-bold">{{ product.title }}</h5>
               <p class="card-text">NT$ {{ product.price }}</p>
               <a class="btn btn-primary d-flex justify-content-center text-white"

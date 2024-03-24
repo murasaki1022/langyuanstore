@@ -13,7 +13,7 @@
             <div class="d-flex mt-2" v-for="cart in cart" :key="cart.id">
               <div class="me-2" style="width: 48px; height: 48px;
               background-size: cover; background-position: center;"
-              :style="{backgroundImage:`url(${cart.product.imageUrl})`}"></div>
+              :style="{ backgroundImage:`url(${cart.product.imageUrl})` }"></div>
               <div class="w-100">
                 <div class="d-flex justify-content-between">
                   <p class="mb-0 fw-bold">{{ cart.product.title }}</p>

@@ -59,7 +59,7 @@ aria-hidden="true"
               >
                 <div class="mb-3">
                   <label :for="image[key]" class="form-label"
-                    >圖片網址{{key+1}}</label
+                    >圖片網址{{ key+1 }}</label
                   >
                   <input
                     :id="image[key]"

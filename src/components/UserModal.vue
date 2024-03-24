@@ -5,7 +5,7 @@
           <div class="modal-content border-0">
             <div class="modal-header bg-dark text-white">
               <h5 class="modal-title" id="exampleModalLabel">
-                <span>{{tempProduct.title}}</span>
+                <span>{{ tempProduct.title }}</span>
             </h5>
               <button type="button" class="btn-close"
                       data-bs-dismiss="modal" aria-label="Close"></button>
@@ -16,13 +16,13 @@
                   <img class="img-fluid" :src="tempProduct.imageUrl" alt="">
             </div>
                 <div class="col-sm-6">
-                  <span class="badge bg-primary rounded-pill">{{tempProduct.category}}</span>
-                  <p>商品描述：{{tempProduct.description}}</p>
-                  <p>商品內容：{{tempProduct.content}}</p>
-                  <div v-if="tempProduct.price === tempProduct.origin_price" class="h5">{{tempProduct.price}} 元</div>
+                  <span class="badge bg-primary rounded-pill">{{ tempProduct.category }}</span>
+                  <p>商品描述：{{ tempProduct.description }}</p>
+                  <p>商品內容：{{ tempProduct.content }}</p>
+                  <div v-if="tempProduct.price === tempProduct.origin_price" class="h5">{{ tempProduct.price }} 元</div>
                 <div v-else>
-                    <del class="h6">原價 {{tempProduct.origin_price}} 元</del>
-                    <div class="h5">現在只要 {{tempProduct.price}} 元</div>
+                    <del class="h6">原價 {{ tempProduct.origin_price }} 元</del>
+                    <div class="h5">現在只要 {{ tempProduct.price }} 元</div>
                 </div>
                   <div>
                     <div class="input-group">
@@ -71,6 +71,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-</style>

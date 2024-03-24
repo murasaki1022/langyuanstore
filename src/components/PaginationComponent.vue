@@ -3,9 +3,7 @@
   <ul class="pagination">
     <li
       class="page-item"
-      :class="{disabled:!pages.has_pre
-    }"
-    >
+      :class="{ disabled:!pages.has_pre }">
       <a
         class="page-link"
         aria-label="Previous"
@@ -22,14 +20,12 @@
       :key="page +123 "
     >
       <a class="page-link"  @click="updatePage(page)"
-        >{{page}}</a
+        >{{ page }}</a
       >
     </li>
     <li
       class="page-item"
-      :class="{disabled:!pages.has_next
-
-    }"
+      :class="{ disabled:!pages.has_next }"
     >
       <a
         class="page-link"

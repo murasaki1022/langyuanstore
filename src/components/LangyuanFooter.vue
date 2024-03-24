@@ -28,6 +28,3 @@ window.bootstrap = bootstrap
 export default {
 }
 </script>
-
-<style scoped>
-</style>

@@ -16,7 +16,7 @@
       <tbody>
         <template v-for="item in orders" :key="item.id">
           <tr v-if="orders.length" :class="{ 'text-secondary': !item.is_paid }">
-            <td>{{$filters.changeDate(item.create_at)}}</td>
+            <td>{{ $filters.changeDate(item.create_at) }}</td>
             <td><span v-text="item.user.email" v-if="item.user"></span></td>
             <td>
               <ul class="list-unstyled">
@@ -158,6 +158,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-</style>

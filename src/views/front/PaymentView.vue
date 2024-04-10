@@ -8,7 +8,9 @@
                 <tr>
                   <th scope="row" class="border-0 px-0 pt-4 pb-4 font-weight-normal">訂單編號</th>
                   <td class="border-0 px-0 pt-4">{{ order.id }}
-                  <button type="button" class="mx-3 btn btn-outline-primary btn-sm">複製單號</button></td>
+                  <!-- 複製單號功能後補 -->
+                  <!-- <button type="button" class="mx-3 btn btn-outline-primary btn-sm">複製單號</button> -->
+                  </td>
                 </tr>
                 <tr>
                   <th scope="row" class="border-0 px-0 pt-0 pb-4 font-weight-normal">收件人姓名</th>

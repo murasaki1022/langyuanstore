@@ -15,7 +15,6 @@
                 </thead>
                 <tbody>
                   <tr class="border-bottom border-top" v-for="cart in cart" :key="cart.id">
-
                     <th scope="row" class="border-0 px-0 font-weight-normal py-4">
                       <td
                       style="width: 72px; height: 72px; background-size: cover;
@@ -27,13 +26,14 @@
                       <div class="input-group input-group-sm">
                           <div class="input-group mb-3">
                             <button type="button" class="btn btn-primary"
-                            :disabled="cart.id === status.changeCartNumLoading"
+                            :disabled="cart.qty<=1"
                             @click="cart.qty--; changeCartNum(cart,cart.qty)">-</button>
                             <input
                               min="1"
                               type="number"
-                              class="form-control"
-                              readonly
+                              class="form-control text-center"
+                              v-model="cart.qty"
+                              disabled
                             />
                             <button type="button" class="btn btn-primary"
                             :disabled="cart.id === status.changeCartNumLoading"
@@ -41,17 +41,18 @@
                           </div>
                         </div>
                     </td>
-                    <td class="border-0 align-middle" style="max-width: 160px;"><p class="mb-0 ms-auto text-end">NT${{ cart.total }}</p></td>
+                    <td class="border-0 align-middle" style="max-width: 160px;"><p class="mb-0 ms-auto text-end">NT$ {{ cart.total }}</p></td>
                     <td class="border-0 align-middle text-center"><i type="button" class="bi bi-trash3 text-danger fs-5" @click="deleteCartItem(cart.id)"></i></td>
                   </tr>
                 </tbody>
               </table>
-              <div class="input-group w-50 mb-3">
+              <!-- 優惠卷功能後補 -->
+              <!-- <div class="input-group w-50 mb-3">
                 <input type="text" class="form-control rounded-0 border-bottom border-top-0 border-start-0 border-end-0 shadow-none" placeholder="Coupon Code" aria-label="Recipient's username" aria-describedby="button-addon2">
                 <div class="input-group-append">
                   <button class="btn btn-outline-primary border-bottom border-top-0 border-start-0 border-end-0 rounded-0" type="button" id="button-addon2"><i class="bi bi-send-fill"></i></button>
                 </div>
-              </div>
+              </div> -->
               <RouterLink to="/products">
                   <button type="button" class="btn btn-outline-primary mb-5 mt-3">
                   <i class="bi bi-chevron-compact-left"></i>
@@ -65,20 +66,20 @@
                 <table class="table text-muted border-bottom">
                   <tbody>
                     <tr>
-                      <th scope="row" class="border-0 px-0 pt-4 font-weight-normal">Subtotal</th>
-                      <td class="text-end border-0 px-0 pt-4">NT${{ final_total }}</td>
+                      <th scope="row" class="border-0 px-0 pt-4 font-weight-normal">商品小計</th>
+                      <td class="text-end border-0 px-0 pt-4">NT$ {{ final_total }}</td>
                     </tr>
                     <tr>
-                      <th scope="row" class="border-0 px-0 pt-0 pb-4 font-weight-normal">Payment</th>
-                      <td class="text-end border-0 px-0 pt-0 pb-4">ApplePay</td>
+                      <th scope="row" class="border-0 px-0 pt-0 pb-4 font-weight-normal">付款方式</th>
+                      <td class="text-end border-0 px-0 pt-0 pb-4">信用卡</td>
                     </tr>
                   </tbody>
                 </table>
                 <div class="d-flex justify-content-between mt-4">
-                  <p class="mb-0 h4 fw-bold">Total</p>
-                  <p class="mb-0 h4 fw-bold">NT${{ final_total }}</p>
+                  <p class="mb-0 h4 fw-bold">總計</p>
+                  <p class="mb-0 h4 fw-bold">NT$ {{ final_total }}</p>
                 </div>
-                <RouterLink to="/order-confirmation"><button type="submit" class="btn btn-primary w-100 mt-4">輸入訂購人資訊</button></RouterLink>
+                <RouterLink to="/order-confirmation"><button type="submit" class="btn btn-primary btn-lg w-100 mt-4 text-white">送出訂單</button></RouterLink>
               </div>
             </div>
           </div>

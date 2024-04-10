@@ -25,8 +25,8 @@
             <p class="text-muted">規格：{{ productInfo.content }}</p>
             </div>
             </div>
-          <p class="mb-0 text-muted ">原價<del>NT${{ productInfo.origin_price }}</del></p>
-          <p class="h4 fw-bold">現正特價<span class="text-primary"> NT${{ productInfo.price }}</span><span class="ms-3">/ {{ productInfo.unit }}</span></p>
+          <p class="mb-0 text-muted ">原價<del>NT$ {{ productInfo.origin_price }}</del></p>
+          <p class="h4 fw-bold">現正特價 <span class="text-primary"> NT$ {{ productInfo.price }}</span><span class="ms-3">/ {{ productInfo.unit }}</span></p>
           <div class="row d-flex mt-5">
               <div class="col-3 col-md-4">
                 <select class="form-select" v-model.number="qty">

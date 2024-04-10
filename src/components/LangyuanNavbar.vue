@@ -26,7 +26,8 @@
               <RouterLink class="nav-link fw-bold fs-6 text-change" to="/q&a">
                 <i class="bi bi-journal-check me-1"></i>常見問題</RouterLink>
             </li>
-       <!-- <li class="nav-item mx-1">
+            <!-- 訂單查詢功能後補 -->
+        <!-- <li class="nav-item mx-1">
               <RouterLink class="nav-link fw-bold fs-6 text-change" to="/search-order">
                 <i class="bi bi-search me-1"></i>訂單查詢</RouterLink>
             </li>-->
@@ -34,7 +35,7 @@
         <!-- icon按鈕 -->
           <div class="d-flex justify-content-center align-items-center me-2">
             <RouterLink to="/cart" class="position-relative"><p class="fs-3 bi bi-cart4 mx-2 mt-2"></p>
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger mt-2">
+              <span class="position-absolute top-0 start-100 translate-middle badge mt-2 bg-danger rounded-circle" v-if="cart.length > 0">
               {{ cart.length }}
               </span>
           </RouterLink>

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-primary pt-4 pb-2 text-center">
+  <div class="bg-primary pt-4 pb-2 mt-5  text-center">
     <div class="d-flex justify-content-center align-items-center">
       <a href="https://github.com/murasaki1022/langyuanstore">
         <i class="bi bi-github text-white fs-1 mx-3"></i>

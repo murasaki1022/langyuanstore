@@ -15,7 +15,7 @@
               <div class="w-100">
                 <div class="d-flex justify-content-between">
                   <p class="mb-0 fw-bold">{{ cart.product.title }}</p>
-                  <p class="mb-0">NT${{ cart.total }}</p>
+                  <p class="mb-0">NT$ {{ cart.total }}</p>
                 </div>
                 <p class="mb-0 fw-bold">x {{ cart.qty }} / {{ cart.product.unit }}</p>
               </div>
@@ -23,18 +23,18 @@
             <table class="table mt-4 border-top border-bottom text-muted">
               <tbody>
                 <tr>
-                  <th scope="row" class="border-0 px-0 pt-4 font-weight-normal">Subtotal</th>
-                  <td class="text-end border-0 px-0 pt-4">NT${{ final_total }}</td>
+                  <th scope="row" class="border-0 px-0 pt-4 font-weight-normal">商品小計</th>
+                  <td class="text-end border-0 px-0 pt-4">NT$ {{ final_total }}</td>
                 </tr>
                 <tr>
-                  <th scope="row" class="border-0 px-0 pt-0 pb-4 font-weight-normal">Payment</th>
-                  <td class="text-end border-0 px-0 pt-0 pb-4">ApplePay</td>
+                  <th scope="row" class="border-0 px-0 pt-0 pb-4 font-weight-normal">支付方式</th>
+                  <td class="text-end border-0 px-0 pt-0 pb-4">信用卡</td>
                 </tr>
               </tbody>
             </table>
             <div class="d-flex justify-content-between mt-4">
-              <p class="mb-0 h4 fw-bold">Total</p>
-              <p class="mb-0 h4 fw-bold">NT${{ final_total }}</p>
+              <p class="mb-0 h4 fw-bold">總計</p>
+              <p class="mb-0 h4 fw-bold">NT$ {{ final_total }}</p>
             </div>
           </div>
         </div>

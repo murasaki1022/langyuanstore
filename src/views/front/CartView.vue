@@ -4,7 +4,10 @@
       <div class="mt-3">
           <div class="row">
             <div class="col-md-8">
-              <table class="table">
+              <div v-if="cart.length === 0">
+                <div class="fs-2">購物車沒有東西哦～<br>請移駕至商品專區</div>
+              </div>
+              <table v-else class="table">
                 <thead>
                   <tr>
                     <th scope="col" class="border-0 ps-0" style="width: 300px">品名</th>

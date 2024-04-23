@@ -23,10 +23,10 @@ export default defineStore('cartStore', {
           this.total = res.data.data.total
         })
     },
-    addCart (id) {
+    addCart (id, qty = 1) {
       const order = {
         product_id: id,
-        qty: 1
+        qty
       }
       axios
         .post(`${VITE_APP_API_URL}/v2/api/${VITE_APP_API_NAME}/cart`, { data: order })
@@ -35,7 +35,7 @@ export default defineStore('cartStore', {
           this.getCart()
         })
         .catch((err) => {
-          console.log(err)
+          alert(err.response.data.message)
         })
     }
   }

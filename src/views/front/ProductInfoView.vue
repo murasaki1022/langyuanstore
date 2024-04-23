@@ -30,7 +30,7 @@
           <div class="row d-flex mt-5">
               <div class="col-3 col-md-4">
                 <select class="form-select" v-model.number="qty">
-                    <option v-for="i in 10" :key="`add-${i}-count`">
+                    <option v-for="i in 10" :key="`add-${i}-count`" :value="i">
                       {{ i }}
                     </option>
               </select>
@@ -147,7 +147,7 @@ export default {
         })
     },
     // eslint-disable-next-line camelcase
-    addCart (product_id, qty = 1) {
+    addCart (product_id, qty) {
       const order = {
         // eslint-disable-next-line camelcase
         product_id,

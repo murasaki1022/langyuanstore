@@ -10,6 +10,8 @@
 > - 後台
 > [https://murasaki1022.github.io/langyuanstore/#/login](https://murasaki1022.github.io/langyuanstore/#/login)
 
+Demo帳號:langyuanonly@gmail.com  密碼:langyuan123
+
 連動前一次專案的[浪浪認養平台主題](https://github.com/tvxq5206/langyuan)，建立一個專屬貓狗的寵物用品電商網站。
 
 ### 專案成員
